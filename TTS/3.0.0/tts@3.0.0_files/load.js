@@ -1,0 +1,1 @@
+window.__ANIMA_PROJECT_DATA__ = {"id":"66e5cc4e5ecfa4f207768383","is_white_label":true,"is_hotspots_enabled":true,"is_public":true,"is_in_paying_team":false,"is_anima_interface_enabled":true};
