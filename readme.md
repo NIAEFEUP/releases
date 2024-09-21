@@ -1,4 +1,4 @@
-# Notas de Releases
+# Notas de Release
 
 ## TTS
 
