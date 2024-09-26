@@ -1,0 +1,5515 @@
+<!DOCTYPE html>
+<html data-lt-installed="true" class="fxvigjku cpywjbcrrc idc0_343 idc0_350">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://yellow-wood-4547.animaapp.io/favicon.png"
+    />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      @import url("https://fonts.googleapis.com/css?family=Kumbh+Sans:700,800|JetBrains+Mono:500,700,400|Jockey+One:400|Fenix:400|Dai+Banna+SIL:500,500italic|Faustina:500,500italic");
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .component-wrapper a {
+        display: contents;
+        pointer-events: auto;
+        text-decoration: none;
+      }
+
+      .component-wrapper * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe {
+        pointer-events: auto;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .screen a {
+        display: contents;
+        text-decoration: none;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .container-center-vertical > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .container-center-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+        width: 100%;
+      }
+
+      .container-center-horizontal > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .auto-animated div {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated input {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay-base {
+        display: none;
+        height: 100%;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .overlay-base.animate-appear {
+        align-items: center;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+      }
+
+      .overlay-base.animate-disappear {
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+        display: block;
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      .overlay-base.animate-disappear * {
+        pointer-events: none;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+
+      .align-self-flex-center {
+        align-self: flex-center;
+      }
+
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --biloba-flower: #b392f0;
+        --black: #000000;
+        --cerulean: #149dd8;
+        --cornflower: #9ecbff;
+        --froly: #f97583;
+        --malibu: #79b8ff;
+        --mercury: #e1e4e8;
+        --mercury-2: #e1e4e84c;
+        --shark: #24292e;
+
+        --font-size-l: 40px;
+        --font-size-m: 32px;
+        --font-size-s: 24px;
+        --font-size-xs: 15.5px;
+        --font-size-xxs: 14.9px;
+        --font-size-xxxs: 8.1px;
+        --font-size-xxxxs: 7.9px;
+
+        --font-family-_sf_ns_mono-regular: ".SF NS Mono-Regular", Helvetica;
+        --font-family-dai_banna_sil: "Dai Banna SIL", Helvetica;
+        --font-family-faustina: "Faustina", Helvetica;
+        --font-family-fenix: "Fenix", Helvetica;
+        --font-family-jetbrains_mono: "JetBrains Mono", Helvetica;
+        --font-family-jockey_one: "Jockey One", Helvetica;
+        --font-family-kumbh_sans: "Kumbh Sans", Helvetica;
+      }
+      .fenix-normal-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-fenix);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-mercury-15-5px {
+        color: var(--mercury);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-mercury-8-1px {
+        color: var(--mercury);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-mercury-14-9px {
+        color: var(--mercury);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-mercury-7-9px {
+        color: var(--mercury);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .fenix-normal-black-24px {
+        color: var(--black);
+        font-family: var(--font-family-fenix);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-froly-15-5px {
+        color: var(--froly);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-froly-8-1px {
+        color: var(--froly);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-malibu-15-5px {
+        color: var(--malibu);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-malibu-8-1px {
+        color: var(--malibu);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-malibu-14-9px {
+        color: var(--malibu);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-malibu-7-9px {
+        color: var(--malibu);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-froly-14-9px {
+        color: var(--froly);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-froly-7-9px {
+        color: var(--froly);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jetbrainsmono-normal-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-cornflower-15-5px {
+        color: var(--cornflower);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .-sfnsmono-regular-normal-cornflower-8-1px {
+        color: var(--cornflower);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jockeyone-normal-black-40px {
+        color: var(--black);
+        font-family: var(--font-family-jockey_one);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jockeyone-normal-black-48px {
+        color: var(--black);
+        font-family: var(--font-family-jockey_one);
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .daibannasil-medium-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-m);
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      .daibannasil-medium-black-24px {
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-s);
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      .-sfnsmono-regular-normal-cornflower-14-9px {
+        color: var(--cornflower);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jetbrainsmono-bold-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .-sfnsmono-regular-normal-cornflower-7-9px {
+        color: var(--cornflower);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-size: var(--font-size-xxxxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jetbrainsmono-normal-black-24px {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jetbrainsmono-bold-cerulean-32px {
+        color: var(--cerulean);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .jetbrainsmono-bold-cerulean-24px {
+        color: var(--cerulean);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      :root {
+      }
+
+      .code-snippet-wrapper {
+        align-items: flex-start;
+        background-color: var(--shark);
+        display: inline-flex;
+        flex: 0 0 auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .frame-26085575 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        left: 0px;
+        position: relative;
+        top: 22px;
+        width: 278px;
+      }
+
+      .frame-32 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0px 37px;
+        position: relative;
+      }
+
+      .img_4713-1 {
+        background-color: transparent;
+        height: 192px;
+        position: relative;
+      }
+
+      .person {
+        background-color: transparent;
+        height: 295px;
+        position: relative;
+        width: 278px;
+      }
+
+      .vector {
+        background-color: transparent;
+        position: relative;
+      }
+
+      /* screen - computer */
+
+      .computer {
+        align-items: center;
+        background-color: #f9fdff;
+        display: flex;
+        flex-direction: column;
+        gap: 110px;
+        left: 0px;
+        min-width: 1025px;
+        overflow: hidden;
+        padding: 28px 0px 129px;
+        position: relative;
+        top: 0px;
+      }
+
+      .computer .frame-37-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: -59.5px;
+        margin-right: -59.5px;
+        position: relative;
+        width: 1144px;
+      }
+
+      .computer .group-48-EMGjjU {
+        background-color: transparent;
+        height: 42.876953125px;
+        position: relative;
+        width: 42.876953125px;
+      }
+
+      .computer .frame-49-EMGjjU {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .computer .title-lTZs7s {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .computer .uni-190-lTZs7s {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -6px;
+        position: relative;
+        text-align: center;
+        width: 216px;
+      }
+
+      .computer .rectangle-498-EMGjjU {
+        background-color: #b33636;
+        border-radius: 2.5px;
+        height: 5px;
+        position: relative;
+        width: 66px;
+      }
+
+      .computer .frame-29-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        padding: 8px 1px;
+        position: relative;
+        width: 1017px;
+      }
+
+      .computer .autenticao-federada-kN5cyD {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .computer .frame-52-kN5cyD {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        gap: 34px;
+        justify-content: center;
+        position: relative;
+        width: 557px;
+      }
+
+      .computer .group-50-xh1P8f {
+        background-color: transparent;
+        height: 71px;
+        position: relative;
+        width: 331px;
+      }
+
+      .computer .rectangle-501-dXqY8d {
+        background-color: #ffffff;
+        border: 3px solid;
+        border-color: var(--cerulean);
+        height: 77px;
+        left: -3px;
+        position: absolute;
+        top: -3px;
+        width: 337px;
+      }
+
+      .computer .aai-logo-1-dXqY8d {
+        background-color: transparent;
+        height: 48px;
+        left: 16px;
+        object-fit: cover;
+        position: absolute;
+        top: 11px;
+        width: 297px;
+      }
+
+      .computer .fcil-rpida-segura-xh1P8f {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: 162px;
+      }
+
+      .computer .span0-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .span1-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .span2-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .span3-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .span4-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .span5-jDzWNO {
+        font-style: normal;
+      }
+
+      .computer .frame-40-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 38px;
+        margin-left: -87.5px;
+        margin-right: -87.5px;
+        max-width: 1200px;
+        position: relative;
+        width: 1200px;
+      }
+
+      .computer .nova-face-pgina-das-cadeiras-R3fx37 {
+        background-color: transparent;
+        height: 66px;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 677px;
+      }
+
+      .computer .group-43-R3fx37 {
+        background-color: transparent;
+        height: 74px;
+        position: relative;
+        width: 679px;
+      }
+
+      .computer .agora-possvel-ver-os-Apyr0D {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width: 677px;
+      }
+
+      .computer .span0-158shx {
+      }
+
+      .computer .span1-158shx {
+      }
+
+      .computer .group-51-R3fx37 {
+        background-color: transparent;
+        height: 634.123046875px;
+        position: relative;
+        width: 513.205078125px;
+      }
+
+      .computer .com-as-capas-dos-liv-R3fx37 {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 576px;
+      }
+
+      .computer .screenshot-2024-09-25-at-224907-1-1-R3fx37 {
+        background-color: transparent;
+        height: 431px;
+        position: relative;
+        width: 289px;
+      }
+
+      .computer .frame-41-mhNbjF {
+        gap: 66px;
+      }
+
+      .computer .group-58-fSIVLn {
+        height: 568px;
+        width: 851px;
+      }
+
+      .computer .group-57-RrMM6v {
+        background-color: transparent;
+        height: 568px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 851px;
+      }
+
+      .computer .frame-32-MXAj6Y {
+        left: 0px;
+        top: 0px;
+        width: 851px;
+      }
+
+      .computer .api-api-e-api-mais-ap-is-por-favor-Mki01o {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .a-uni-alimentada-com-Mki01o {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-left: -30px;
+        margin-right: -30px;
+        position: relative;
+        text-align: center;
+        width: 837px;
+      }
+
+      .computer .span0-fAR8rD {
+      }
+
+      .computer .span1-fAR8rD {
+      }
+
+      .computer .span2-fAR8rD {
+      }
+
+      .computer .span3-fAR8rD {
+      }
+
+      .computer .span4-fAR8rD {
+      }
+
+      .computer .estas-so-as-transies-Mki01o {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .span0-GaKZA7 {
+      }
+
+      .computer .span1-GaKZA7 {
+      }
+
+      .computer .span2-GaKZA7 {
+      }
+
+      .computer .frame-59-Mki01o {
+        align-items: flex-start;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .computer .horrio-do-estudante-g44WWE {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: 441px;
+      }
+
+      .computer .span0-rL6nVl {
+      }
+
+      .computer .span1-rL6nVl {
+      }
+
+      .computer .span2-rL6nVl {
+      }
+
+      .computer .span3-rL6nVl {
+      }
+
+      .computer .span4-rL6nVl {
+      }
+
+      .computer .span5-rL6nVl {
+      }
+
+      .computer .group-58-g44WWE {
+        height: 115.75390625px;
+        width: 115.75390625px;
+      }
+
+      .computer .frame-41-kDGpoT {
+        gap: 66px;
+      }
+
+      .computer .frame-32-JgSDAj {
+        flex: 0 0 auto;
+        width: 851px;
+      }
+
+      .computer .auto-serializao-fQwr1A {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .serializao-o-process-fQwr1A {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-left: -22px;
+        margin-right: -22px;
+        position: relative;
+        text-align: center;
+        width: 821px;
+      }
+
+      .computer .span0-1zpkt2 {
+      }
+
+      .computer .span1-1zpkt2 {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .computer .span2-1zpkt2 {
+      }
+
+      .computer .group-21-JgSDAj {
+        background-color: transparent;
+        height: 193px;
+        position: relative;
+        width: 549px;
+      }
+
+      .computer .vamos-a-um-exemplo-d-JgSDAj {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-59-JgSDAj {
+        align-items: center;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .computer .code-snippet-wrapper-baeZvI {
+        gap: 7.766017436981201px;
+        padding: 4.853761196136475px;
+      }
+
+      .computer .code-line-numbers-bWuc6m {
+        font-size: var(--font-size-xs);
+        line-height: 23.3px;
+        margin-top: -0.49px;
+      }
+
+      .computer .code-snippet-bWuc6m {
+        font-size: var(--font-size-xs);
+        line-height: 23.3px;
+        margin-top: -0.49px;
+      }
+
+      .computer .span0-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span1-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span2-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span3-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span4-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span5-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span6-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span7-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span8-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span9-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span10-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span11-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span12-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span13-2BknSP {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .computer .span14-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span15-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span16-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span17-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span18-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span19-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span20-2BknSP {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .computer .span21-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span22-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span23-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span24-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span25-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span26-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span27-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span28-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span29-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span30-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span31-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span32-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span33-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span34-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span35-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span36-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span37-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span38-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span39-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span40-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span41-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span42-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span43-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span44-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span45-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span46-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span47-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span48-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span49-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span50-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span51-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span52-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span53-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span54-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span55-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span56-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span57-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span58-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span59-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span60-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span61-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span62-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span63-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span64-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span65-2BknSP {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .computer .span66-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span67-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span68-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span69-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span70-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span71-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span72-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span73-2BknSP {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .computer .span74-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span75-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span76-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span77-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span78-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span79-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span80-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span81-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span82-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span83-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span84-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span85-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span86-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span87-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .span88-2BknSP {
+        font-style: normal;
+      }
+
+      .computer .vector-baeZvI {
+        height: 69.181640625px;
+        width: 50.20703125px;
+      }
+
+      .computer .code-snippet-wrapper-LtoZtS {
+        gap: 7.442193984985352px;
+        padding: 4.651371002197266px;
+      }
+
+      .computer .code-line-numbers-ZtkLBD {
+        font-size: var(--font-size-xxs);
+        line-height: 22.3px;
+        margin-top: -0.47px;
+      }
+
+      .computer .code-snippet-ZtkLBD {
+        font-size: var(--font-size-xxs);
+        line-height: 22.3px;
+        margin-top: -0.47px;
+      }
+
+      .computer .span0-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span1-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span2-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span3-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span4-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span5-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span6-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span7-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span8-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span9-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span10-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span11-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span12-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span13-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span14-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span15-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span16-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span17-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span18-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span19-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span20-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span21-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span22-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span23-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span24-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span25-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span26-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span27-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span28-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span29-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span30-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span31-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span32-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span33-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span34-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span35-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span36-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span37-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span38-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span39-yFxxXY {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .computer .span40-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span41-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span42-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span43-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span44-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span45-yFxxXY {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .computer .span46-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span47-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span48-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span49-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span50-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span51-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span52-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span53-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span54-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span55-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span56-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span57-yFxxXY {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .computer .span58-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span59-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span60-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span61-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span62-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span63-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span64-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span65-yFxxXY {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .computer .span66-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span67-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span68-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span69-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span70-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span71-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .span72-yFxxXY {
+        font-style: normal;
+      }
+
+      .computer .frame-41-hbifyF {
+        gap: 37px;
+      }
+
+      .computer .group-54-PTB215 {
+        align-self: stretch;
+        background-color: transparent;
+        height: 205px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .group-52-3xOF6W {
+        background-color: transparent;
+        height: 205px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 1019px;
+      }
+
+      .computer .frame-32-X2J4xy {
+        left: 0px;
+        top: 0px;
+        width: 1019px;
+      }
+
+      .computer .duas-pastas-duas-packages-0dxdex {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .a-partir-de-agora-a-0dxdex {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .span0-DxmQwK {
+      }
+
+      .computer .span1-DxmQwK {
+      }
+
+      .computer .span2-DxmQwK {
+      }
+
+      .computer .frame-59-PTB215 {
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .computer .uni-ZoT9pX {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .computer .span0-YcLjQC {
+      }
+
+      .computer .span1-YcLjQC {
+      }
+
+      .computer .vector-ZoT9pX {
+        height: 67px;
+        width: 67px;
+      }
+
+      .computer .frame-59-ZoT9pX {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 23px 23px;
+        justify-content: center;
+      }
+
+      .computer .packagesuni_app-k1eHWw {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: 327px;
+      }
+
+      .computer .span0-6NX7cO {
+      }
+
+      .computer .span1-6NX7cO {
+      }
+
+      .computer .packagesuni_ui-k1eHWw {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .computer .span0-DEYPiG {
+      }
+
+      .computer .span1-DEYPiG {
+      }
+
+      .computer .o-que-ser-que-vem-a-PTB215 {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1019px;
+      }
+
+      .computer .frame-42-mhNbjF {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 37px;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .frame-33-2dmD1y {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .um-agradecimento-s-TgOVn4 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .pessoas-envolvidas-TgOVn4 {
+        align-self: stretch;
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 800;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-46-2dmD1y {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 0px 14px;
+        justify-content: center;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .img_4713-1-F5cBVi {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .bruno-mendes-F5cBVi {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-tf37nE {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .diogo-goiana-tf37nE {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-xaZopT {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .andr-lima-xaZopT {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-GUj4Ov {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .vtor-pires-GUj4Ov {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-BXFEQ8 {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .bruno-oliveira-BXFEQ8 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-kUaI2U {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .clara-sousa-kUaI2U {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-6VHwmt {
+        width: 192px;
+      }
+
+      .computer .lus-duarte-6VHwmt {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-cohfxk {
+        width: 192.525390625px;
+      }
+
+      .computer .joo-torre-pereira-cohfxk {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-FS6dIw {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .rubem-neto-FS6dIw {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-GPyjYm {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .computer .bartek-pacia-GPyjYm {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .tudo-por-agora-mhNbjF {
+        align-self: stretch;
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-47-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 11px;
+        margin-left: -59.5px;
+        margin-right: -59.5px;
+        position: relative;
+      }
+
+      .computer .logo_2018-1-2-aPPwut {
+        background-color: transparent;
+        height: 121px;
+        position: relative;
+        width: 118px;
+      }
+
+      .computer .niaefeup-aPPwut {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: 1144px;
+      }
+
+      .computer .projetos-aPPwut {
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1144px;
+      }
+
+      .computer .code-line-numbers {
+        background-color: transparent;
+        color: var(--mercury-2);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        position: relative;
+        text-align: right;
+        width: fit-content;
+      }
+
+      .computer .code-snippet {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .computer .frame-41 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 1019px;
+      }
+
+      .computer .frame-59 {
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        position: relative;
+      }
+
+      .computer .group-58 {
+        background-color: transparent;
+        position: relative;
+      }
+      /* screen - mobile */
+
+      .mobile {
+        align-items: center;
+        background-color: #f9fdff;
+        display: flex;
+        flex-direction: column;
+        gap: 78px;
+        left: 0px;
+        min-width: 351px;
+        overflow: hidden;
+        padding: 28px 0px 129px;
+        position: relative;
+        top: 0px;
+      }
+
+      .mobile .frame-37-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: -396.5px;
+        margin-right: -396.5px;
+        position: relative;
+        width: 1144px;
+      }
+
+      .mobile .group-48-WNXEpW {
+        background-color: transparent;
+        height: 42.876953125px;
+        position: relative;
+        width: 42.876953125px;
+      }
+
+      .mobile .frame-49-WNXEpW {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .mobile .title-ktx0qO {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .mobile .uni-190-ktx0qO {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -6px;
+        position: relative;
+        text-align: center;
+        width: 216px;
+      }
+
+      .mobile .rectangle-498-WNXEpW {
+        background-color: #b33636;
+        border-radius: 2.5px;
+        height: 5px;
+        position: relative;
+        width: 66px;
+      }
+
+      .mobile .frame-29-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        margin-left: -333px;
+        margin-right: -333px;
+        padding: 8px 1px;
+        position: relative;
+        width: 1017px;
+      }
+
+      .mobile .autenticao-federada-9EiBzQ {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 273px;
+      }
+
+      .mobile .frame-52-9EiBzQ {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        justify-content: center;
+        position: relative;
+        width: 557px;
+      }
+
+      .mobile .group-50-3mbeVc {
+        background-color: transparent;
+        height: 59px;
+        position: relative;
+        width: 276px;
+      }
+
+      .mobile .rectangle-501-KGc9a9 {
+        background-color: #ffffff;
+        border: 3px solid;
+        border-color: var(--cerulean);
+        height: 65px;
+        left: -3px;
+        position: absolute;
+        top: -3px;
+        width: 282px;
+      }
+
+      .mobile .aai-logo-1-KGc9a9 {
+        background-color: transparent;
+        height: 40px;
+        left: 13px;
+        object-fit: cover;
+        position: absolute;
+        top: 9px;
+        width: 248px;
+      }
+
+      .mobile .fcil-rpida-segura-3mbeVc {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 162px;
+      }
+
+      .mobile .span0-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .span1-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .span2-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .span3-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .span4-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .span5-2oVl7x {
+        font-style: normal;
+      }
+
+      .mobile .frame-40-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 38px;
+        margin-left: -424.5px;
+        margin-right: -424.5px;
+        max-width: 1200px;
+        position: relative;
+        width: 1200px;
+      }
+
+      .mobile .nova-face-pgina-das-cadeiras-KrJyjp {
+        background-color: transparent;
+        height: 104px;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 305px;
+      }
+
+      .mobile .group-43-KrJyjp {
+        background-color: transparent;
+        height: 109px;
+        position: relative;
+        width: 279px;
+      }
+
+      .mobile .agora-possvel-ver-os-TKrgQA {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width: 277px;
+      }
+
+      .mobile .span0-Q0rRgt {
+      }
+
+      .mobile .span1-Q0rRgt {
+      }
+
+      .mobile .group-51-KrJyjp {
+        background-color: transparent;
+        height: 408px;
+        position: relative;
+        width: 265px;
+      }
+
+      .mobile .com-as-capas-dos-liv-KrJyjp {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 253px;
+      }
+
+      .mobile .screenshot-2024-09-25-at-224907-1-1-KrJyjp {
+        background-color: transparent;
+        height: 395px;
+        position: relative;
+        width: 265px;
+      }
+
+      .mobile .frame-41-LP8vkM {
+        gap: 66px;
+      }
+
+      .mobile .group-58-bSOckh {
+        background-color: transparent;
+        height: 690px;
+        position: relative;
+        width: 851px;
+      }
+
+      .mobile .group-57-zsCgE5 {
+        background-color: transparent;
+        height: 690px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 851px;
+      }
+
+      .mobile .frame-32-ZG9LZW {
+        left: 0px;
+        top: 0px;
+        width: 851px;
+      }
+
+      .mobile .api-api-e-api-mais-ap-is-por-favor-Vbx5xN {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .a-uni-alimentada-com-Vbx5xN {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 287px;
+      }
+
+      .mobile .span0-Amt53r {
+      }
+
+      .mobile .span1-Amt53r {
+      }
+
+      .mobile .span2-Amt53r {
+      }
+
+      .mobile .span3-Amt53r {
+      }
+
+      .mobile .span4-Amt53r {
+      }
+
+      .mobile .estas-so-as-transies-Vbx5xN {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 337px;
+      }
+
+      .mobile .span0-eSqfSN {
+      }
+
+      .mobile .span1-eSqfSN {
+      }
+
+      .mobile .span2-eSqfSN {
+      }
+
+      .mobile .horrio-do-estudante-Vbx5xN {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: left;
+        width: 261px;
+      }
+
+      .mobile .frame-41-c2r8eh {
+        gap: 66px;
+      }
+
+      .mobile .frame-32-VyoKEq {
+        flex: 0 0 auto;
+        width: 851px;
+      }
+
+      .mobile .auto-serializao-l9EZHO {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .serializao-o-process-l9EZHO {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 279px;
+      }
+
+      .mobile .span0-PLtUMI {
+      }
+
+      .mobile .span1-PLtUMI {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .mobile .group-21-VyoKEq {
+        background-color: transparent;
+        height: 216.56005859375px;
+        position: relative;
+        width: 308.900390625px;
+      }
+
+      .mobile .group-60-ZweGBv {
+        background-color: transparent;
+        height: 217px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 313px;
+      }
+
+      .mobile .rectangle-485-aF7L5x {
+        background-color: transparent;
+        height: 217px;
+        left: 0px;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        width: 309px;
+      }
+
+      .mobile .json_serializable-aF7L5x {
+        background-color: transparent;
+        height: auto;
+        left: 9px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 14px;
+        width: 283px;
+      }
+
+      .mobile .automatically-genera-aF7L5x {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-faustina);
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 500;
+        height: auto;
+        left: 19px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 85px;
+        width: 264px;
+      }
+
+      .mobile .vamos-a-um-exemplo-d-VyoKEq {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 289px;
+      }
+
+      .mobile .frame-59-VyoKEq {
+        align-items: center;
+        display: inline-flex;
+        gap: 14px;
+      }
+
+      .mobile .code-snippet-wrapper-jiT8fd {
+        gap: 4.051729202270508px;
+        padding: 2.5323307514190674px;
+      }
+
+      .mobile .code-line-numbers-xgLczb {
+        font-size: var(--font-size-xxxs);
+        line-height: 12.2px;
+      }
+
+      .mobile .code-snippet-xgLczb {
+        font-size: var(--font-size-xxxs);
+        line-height: 12.2px;
+      }
+
+      .mobile .span0-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span1-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span2-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span3-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span4-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span5-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span6-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span7-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span8-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span9-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span10-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span11-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span12-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span13-eCFG9z {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .mobile .span14-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span15-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span16-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span17-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span18-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span19-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span20-eCFG9z {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .mobile .span21-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span22-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span23-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span24-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span25-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span26-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span27-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span28-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span29-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span30-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span31-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span32-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span33-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span34-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span35-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span36-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span37-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span38-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span39-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span40-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span41-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span42-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span43-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span44-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span45-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span46-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span47-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span48-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span49-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span50-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span51-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span52-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span53-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span54-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span55-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span56-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span57-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span58-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span59-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span60-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span61-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span62-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span63-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span64-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span65-eCFG9z {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .mobile .span66-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span67-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span68-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span69-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span70-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span71-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span72-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span73-eCFG9z {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .mobile .span74-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span75-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span76-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span77-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span78-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span79-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span80-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span81-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span82-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span83-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span84-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span85-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span86-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span87-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .span88-eCFG9z {
+        font-style: normal;
+      }
+
+      .mobile .vector-jiT8fd {
+        height: 50.9580078125px;
+        width: 36.982421875px;
+      }
+
+      .mobile .code-snippet-wrapper-QDutUj {
+        gap: 3.9729626178741455px;
+        padding: 2.4831013679504395px;
+      }
+
+      .mobile .code-line-numbers-zjiNnl {
+        font-size: var(--font-size-xxxxs);
+        line-height: 11.9px;
+      }
+
+      .mobile .code-snippet-zjiNnl {
+        font-size: var(--font-size-xxxxs);
+        line-height: 11.9px;
+      }
+
+      .mobile .span0-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span1-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span2-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span3-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span4-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span5-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span6-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span7-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span8-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span9-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span10-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span11-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span12-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span13-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span14-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span15-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span16-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span17-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span18-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span19-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span20-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span21-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span22-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span23-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span24-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span25-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span26-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span27-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span28-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span29-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span30-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span31-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span32-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span33-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span34-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span35-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span36-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span37-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span38-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span39-bbpqBr {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .mobile .span40-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span41-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span42-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span43-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span44-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span45-bbpqBr {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .mobile .span46-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span47-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span48-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span49-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span50-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span51-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span52-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span53-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span54-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span55-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span56-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span57-bbpqBr {
+        color: var(--black);
+        font-style: normal;
+      }
+
+      .mobile .span58-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span59-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span60-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span61-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span62-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span63-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span64-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span65-bbpqBr {
+        color: var(--biloba-flower);
+        font-style: normal;
+      }
+
+      .mobile .span66-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span67-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span68-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span69-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span70-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span71-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .span72-bbpqBr {
+        font-style: normal;
+      }
+
+      .mobile .frame-41-gz9XG1 {
+        gap: 37px;
+      }
+
+      .mobile .group-54-xYk4kX {
+        background-color: transparent;
+        height: 331px;
+        position: relative;
+        width: 321px;
+      }
+
+      .mobile .group-52-wx9Ix7 {
+        background-color: transparent;
+        height: 331px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 321px;
+      }
+
+      .mobile .frame-32-b3D2sT {
+        left: 0px;
+        top: 0px;
+        width: 321px;
+      }
+
+      .mobile .duas-pastas-duas-packages-Vg2svA {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .a-partir-de-agora-a-Vg2svA {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .span0-PVVeqx {
+      }
+
+      .mobile .span1-PVVeqx {
+      }
+
+      .mobile .span2-PVVeqx {
+      }
+
+      .mobile .frame-59-xYk4kX {
+        align-items: center;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        width: 297px;
+      }
+
+      .mobile .uni-adTFSx {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .mobile .span0-SwRkxt {
+      }
+
+      .mobile .span1-SwRkxt {
+      }
+
+      .mobile .vector-adTFSx {
+        height: 67px;
+        width: 67px;
+      }
+
+      .mobile .frame-59-adTFSx {
+        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        width: 247px;
+      }
+
+      .mobile .packagesuni_app-FaHx9F {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-right: -80px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        width: 327px;
+      }
+
+      .mobile .span0-v9YtAK {
+      }
+
+      .mobile .span1-v9YtAK {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .mobile .packagesuni_ui-FaHx9F {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .mobile .span0-ThILEY {
+      }
+
+      .mobile .span1-ThILEY {
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .mobile .o-que-ser-que-vem-a-xYk4kX {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 287px;
+      }
+
+      .mobile .frame-42-LP8vkM {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 37px;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .frame-33-hRzdOc {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .um-agradecimento-s-1FanxZ {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .pessoas-envolvidas-1FanxZ {
+        align-self: stretch;
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 800;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .frame-46-hRzdOc {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 0px 14px;
+        justify-content: center;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .img_4713-1-0hgtuI {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .bruno-mendes-0hgtuI {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-DvNGr0 {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .diogo-goiana-DvNGr0 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-hutevj {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .andr-lima-hutevj {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-VhjxTM {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .vtor-pires-VhjxTM {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-feRDbg {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .bruno-oliveira-feRDbg {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-ngKCot {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .clara-sousa-ngKCot {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-luxPVt {
+        width: 192px;
+      }
+
+      .mobile .lus-duarte-luxPVt {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-CYrRnB {
+        width: 192.525390625px;
+      }
+
+      .mobile .joo-torre-pereira-CYrRnB {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-IxhBxN {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .rubem-neto-IxhBxN {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-wuyMJg {
+        object-fit: cover;
+        width: 192.525390625px;
+      }
+
+      .mobile .bartek-pacia-wuyMJg {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .tudo-por-agora-LP8vkM {
+        align-self: stretch;
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .frame-47-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 11px;
+        margin-left: -396.5px;
+        margin-right: -396.5px;
+        position: relative;
+      }
+
+      .mobile .logo_2018-1-2-WbpxgG {
+        background-color: transparent;
+        height: 121px;
+        position: relative;
+        width: 118px;
+      }
+
+      .mobile .niaefeup-WbpxgG {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: 1144px;
+      }
+
+      .mobile .projetos-WbpxgG {
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1144px;
+      }
+
+      .mobile .code-line-numbers {
+        background-color: transparent;
+        color: var(--mercury-2);
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        margin-top: -0.25px;
+        position: relative;
+        text-align: right;
+        width: fit-content;
+      }
+
+      .mobile .code-snippet {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-_sf_ns_mono-regular);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        margin-top: -0.25px;
+        position: relative;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .mobile .frame-41 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -334px;
+        margin-right: -334px;
+        position: relative;
+        width: 1019px;
+      }
+
+      .mobile .frame-59 {
+        background-color: transparent;
+        flex: 0 0 auto;
+        flex-direction: column;
+        position: relative;
+      }
+      @media screen and (max-width: 1024px) {
+        .screen.computer {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 1025px) {
+        .screen.mobile {
+          display: none;
+        }
+      }
+    </style>
+    <title>UNI 1.9.0</title>
+  </head>
+  <body
+    style="
+      margin: 0px;
+      background: rgb(249, 253, 255);
+      overscroll-behavior-x: auto;
+    "
+    inject_vt_svd="true"
+  >
+    <div class="computer screen" data-id="3109:83">
+      <div class="frame-37-mhNbjF" data-id="3109:84">
+        <img
+          class="group-48-EMGjjU"
+          data-id="3109:85"
+          src="./1.9.0_files/group-48@2x.png"
+          alt="Group 48"
+        />
+        <div class="frame-49-EMGjjU" data-id="3109:89">
+          <h1 class="title-lTZs7s" data-id="3109:90">Nota de Release</h1>
+          <div class="uni-190-lTZs7s" data-id="3109:91">UNI 1.9.0</div>
+        </div>
+        <div class="rectangle-498-EMGjjU" data-id="3109:92"></div>
+      </div>
+      <div class="frame-29-mhNbjF" data-id="3109:93">
+        <div
+          class="autenticao-federada-kN5cyD jockeyone-normal-black-48px"
+          data-id="3109:94"
+        >
+          Autenticação Federada
+        </div>
+        <div class="frame-52-kN5cyD" data-id="3207:1048">
+          <div class="group-50-xh1P8f" data-id="3207:1047">
+            <div class="rectangle-501-dXqY8d" data-id="3207:1046"></div>
+            <img
+              class="aai-logo-1-dXqY8d"
+              data-id="3207:1045"
+              src="./1.9.0_files/aai-logo-1.png"
+              alt="Aai Logo 1"
+            />
+          </div>
+          <p class="fcil-rpida-segura-xh1P8f" data-id="3109:95">
+            <span class="span0-jDzWNO jetbrainsmono-bold-cerulean-32px">+ </span
+            ><span class="span1-jDzWNO fenix-normal-black-32px"
+              >Fácil, <br /></span
+            ><span class="span2-jDzWNO jetbrainsmono-bold-cerulean-32px"
+              >+ </span
+            ><span class="span3-jDzWNO fenix-normal-black-32px"
+              >Rápida <br /></span
+            ><span class="span4-jDzWNO jetbrainsmono-bold-cerulean-32px"
+              >+ </span
+            ><span class="span5-jDzWNO fenix-normal-black-32px">Segura!</span>
+          </p>
+        </div>
+      </div>
+      <div class="frame-40-mhNbjF" data-id="3109:104">
+        <p
+          class="nova-face-pgina-das-cadeiras-R3fx37 jockeyone-normal-black-48px"
+          data-id="3109:105"
+        >
+          Nova face à página das cadeiras!
+        </p>
+        <div class="group-43-R3fx37" data-id="3109:106">
+          <p
+            class="agora-possvel-ver-os-Apyr0D fenix-normal-black-32px"
+            data-id="3109:107"
+          >
+            <span class="span0-158shx fenix-normal-black-32px"
+              >Agora é possível ver os professores e aceder aos dados das
+              cadeiras de forma mais </span
+            ><span class="span1-158shx daibannasil-medium-black-32px"
+              >clean</span
+            >
+          </p>
+        </div>
+        <img
+          class="group-51-R3fx37"
+          data-id="3206:369"
+          src="./1.9.0_files/group-51.png"
+          alt="Group 51"
+        />
+        <p
+          class="com-as-capas-dos-liv-R3fx37 fenix-normal-black-32px"
+          data-id="3206:370"
+        >
+          Com as capas dos livros que devias de ler...
+        </p>
+        <img
+          class="screenshot-2024-09-25-at-224907-1-1-R3fx37"
+          data-id="3223:823"
+          src="./1.9.0_files/screenshot-2024-09-25-at-22-49-07-1-1.svg"
+          alt="Screenshot 2024-09-25 at 22.49.07 1 1"
+        />
+      </div>
+      <div class="frame-41-mhNbjF frame-41" data-id="3109:130">
+        <div class="group-58-fSIVLn group-58" data-id="3206:456">
+          <div class="group-57-RrMM6v" data-id="3206:453">
+            <div class="frame-32-MXAj6Y frame-32" data-id="3109:131">
+              <p
+                class="api-api-e-api-mais-ap-is-por-favor-Mki01o jockeyone-normal-black-48px"
+                data-id="3109:132"
+              >
+                API, API e API. <br />Mais APIs, por favor
+              </p>
+              <p
+                class="a-uni-alimentada-com-Mki01o fenix-normal-black-32px"
+                data-id="3109:133"
+              >
+                <span class="span0-fAR8rD fenix-normal-black-32px"
+                  >A UNI é alimentada com dados exteriores prevenientes daquilo
+                  a que chamamos API (</span
+                ><span class="span1-fAR8rD daibannasil-medium-black-32px"
+                  >Application Programming Interface</span
+                ><span class="span2-fAR8rD fenix-normal-black-32px"
+                  >).<br />Estas novas APIs trazem a informação no formato JSON,
+                  um tipo de dados muito mais simples de manipular e mais
+                  resistente a </span
+                ><span class="span3-fAR8rD daibannasil-medium-black-32px"
+                  >bugs</span
+                ><span class="span4-fAR8rD fenix-normal-black-32px">.</span>
+              </p>
+              <p
+                class="estas-so-as-transies-Mki01o fenix-normal-black-32px"
+                data-id="3109:134"
+              >
+                <span class="span0-GaKZA7 fenix-normal-black-32px"
+                  >Estas são as transições recentes para APIs </span
+                ><span class="span1-GaKZA7 daibannasil-medium-black-32px"
+                  >nice</span
+                ><span class="span2-GaKZA7 fenix-normal-black-32px">:</span>
+              </p>
+              <div class="frame-59-Mki01o frame-59" data-id="3218:637">
+                <p
+                  class="horrio-do-estudante-g44WWE jetbrainsmono-normal-black-32px"
+                  data-id="3207:1067"
+                >
+                  <span class="span0-rL6nVl jetbrainsmono-normal-black-32px"
+                    >&gt;</span
+                  ><span class="span1-rL6nVl fenix-normal-black-32px">
+                    Horário do Estudante<br /></span
+                  ><span class="span2-rL6nVl jetbrainsmono-normal-black-32px"
+                    >&gt;</span
+                  ><span class="span3-rL6nVl fenix-normal-black-32px">
+                    Ocupação da Biblioteca<br /></span
+                  ><span class="span4-rL6nVl jetbrainsmono-normal-black-32px"
+                    >&gt;</span
+                  ><span class="span5-rL6nVl fenix-normal-black-32px">
+                    Informações de uma cadeira</span
+                  >
+                </p>
+                <img
+                  class="group-58-g44WWE group-58"
+                  data-id="3218:633"
+                  src="./1.9.0_files/group-58.png"
+                  alt="Group 58"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-41-kDGpoT frame-41" data-id="3207:1049">
+        <div class="frame-32-JgSDAj frame-32" data-id="3207:1050">
+          <div
+            class="auto-serializao-fQwr1A jockeyone-normal-black-48px"
+            data-id="3207:1051"
+          >
+            Auto-Serialização
+          </div>
+          <p
+            class="serializao-o-process-fQwr1A fenix-normal-black-32px"
+            data-id="3207:1052"
+          >
+            <span class="span0-1zpkt2 fenix-normal-black-32px"
+              >Serialização é o processo de converter uma estrutura de dados,
+              por exemplo JSON, para um objeto dart.<br /><br />Antigamente este
+              processo era penoso porque era necessário criar funções
+              específicas.<br /><br />Isso acabou com a adoção do </span
+            ><span class="span1-1zpkt2">json_serializable</span
+            ><span class="span2-1zpkt2 fenix-normal-black-32px">.</span>
+          </p>
+        </div>
+        <img
+          class="group-21-JgSDAj"
+          data-id="3206:372"
+          src="./1.9.0_files/group-21.svg"
+          alt="Group 21"
+        />
+        <p
+          class="vamos-a-um-exemplo-d-JgSDAj fenix-normal-black-32px"
+          data-id="3218:565"
+        >
+          Vamos a um exemplo do nosso modelo CourseUnit<br />Na verdade, ele é
+          bem maior!
+        </p>
+        <div class="frame-59-JgSDAj frame-59" data-id="3218:623">
+          <div
+            class="code-snippet-wrapper-baeZvI code-snippet-wrapper"
+            data-id="3218:612"
+          >
+            <div
+              class="code-line-numbers-bWuc6m code-line-numbers"
+              data-id="3218:613"
+            >
+              1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24
+            </div>
+            <p class="code-snippet-bWuc6m code-snippet" data-id="3218:614">
+              <span class="span0-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >class</span
+              ><span
+                class="span1-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span class="span2-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >CourseUnit</span
+              ><span
+                class="span3-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                {<br />&nbsp;&nbsp;</span
+              ><span class="span4-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >int</span
+              ><span
+                class="span5-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                id;<br />&nbsp;&nbsp;</span
+              ><span class="span6-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span7-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                code;<br />&nbsp;&nbsp;</span
+              ><span class="span8-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span9-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                name;<br />&nbsp;&nbsp;</span
+              ><span
+                class="span10-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >num</span
+              ><span class="span11-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >?</span
+              ><span
+                class="span12-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                ects;<br /></span
+              ><span class="span13-2BknSP"><br /></span
+              ><span
+                class="span14-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;&nbsp;</span
+              ><span class="span15-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >static</span
+              ><span
+                class="span16-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span17-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >CourseUnit</span
+              ><span class="span18-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >?</span
+              ><span
+                class="span19-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span class="span20-2BknSP">fromJson</span
+              ><span
+                class="span21-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >(</span
+              ><span
+                class="span22-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >Map</span
+              ><span
+                class="span23-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&lt;</span
+              ><span
+                class="span24-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span25-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >, </span
+              ><span
+                class="span26-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >dynamic</span
+              ><span
+                class="span27-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&gt; data) {<br />&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="span28-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >return</span
+              ><span
+                class="span29-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span30-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >CourseUnit</span
+              ><span
+                class="span31-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</span
+              ><span class="span32-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span33-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                data[</span
+              ><span
+                class="span34-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'ucurr_id'</span
+              ><span
+                class="span35-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >] </span
+              ><span class="span36-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >as</span
+              ><span
+                class="span37-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span38-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >int</span
+              ><span
+                class="span39-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</span
+              ><span class="span40-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span41-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                data[</span
+              ><span
+                class="span42-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'ucurr_codigo'</span
+              ><span
+                class="span43-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >] </span
+              ><span class="span44-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >as</span
+              ><span
+                class="span45-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span46-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span47-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</span
+              ><span class="span48-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span49-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                data[</span
+              ><span
+                class="span50-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'ucurr_nome'</span
+              ><span
+                class="span51-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >] </span
+              ><span class="span52-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >as</span
+              ><span
+                class="span53-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span54-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span55-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ects</span
+              ><span class="span56-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span57-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                data[</span
+              ><span
+                class="span58-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'creditos_ects'</span
+              ><span
+                class="span59-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >] </span
+              ><span class="span60-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >as</span
+              ><span
+                class="span61-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;</span
+              ><span
+                class="span62-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >num</span
+              ><span class="span63-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >?</span
+              ><span
+                class="span64-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br />&nbsp;&nbsp;}<br /></span
+              ><span class="span65-2BknSP"><br /></span
+              ><span
+                class="span66-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&nbsp;&nbsp;</span
+              ><span
+                class="span67-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >Map</span
+              ><span
+                class="span68-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&lt;</span
+              ><span
+                class="span69-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >String</span
+              ><span
+                class="span70-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >, </span
+              ><span
+                class="span71-2BknSP -sfnsmono-regular-normal-malibu-15-5px"
+                >dynamic</span
+              ><span
+                class="span72-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >&gt; </span
+              ><span class="span73-2BknSP">toMap</span
+              ><span
+                class="span74-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+                >() {<br />&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="span75-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >return</span
+              ><span
+                class="span76-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span77-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'id'</span
+              ><span class="span78-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span79-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                id,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span80-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'code'</span
+              ><span class="span81-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span82-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                code,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span83-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'name'</span
+              ><span class="span84-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span85-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                name,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span86-2BknSP -sfnsmono-regular-normal-cornflower-15-5px"
+                >'ects'</span
+              ><span class="span87-2BknSP -sfnsmono-regular-normal-froly-15-5px"
+                >:</span
+              ><span
+                class="span88-2BknSP -sfnsmono-regular-normal-mercury-15-5px"
+              >
+                ects,<br />&nbsp;&nbsp;&nbsp;&nbsp;};<br />&nbsp;&nbsp;}<br />}</span
+              >
+            </p>
+          </div>
+          <img
+            class="vector-baeZvI vector"
+            data-id="3218:621"
+            src="./1.9.0_files/vector.svg"
+            alt="Vector"
+          />
+          <div
+            class="code-snippet-wrapper-LtoZtS code-snippet-wrapper"
+            data-id="3218:605"
+          >
+            <div
+              class="code-line-numbers-ZtkLBD code-line-numbers"
+              data-id="3218:606"
+            >
+              1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16
+            </div>
+            <p class="code-snippet-ZtkLBD code-snippet" data-id="3218:607">
+              <span class="span0-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >@JsonSerializable</span
+              ><span
+                class="span1-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >()<br /></span
+              ><span class="span2-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >class</span
+              ><span
+                class="span3-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span class="span4-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >CourseUnit</span
+              ><span
+                class="span5-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+              >
+                {<br />&nbsp;&nbsp;</span
+              ><span class="span6-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >@JsonKey</span
+              ><span
+                class="span7-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(name</span
+              ><span class="span8-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >:</span
+              ><span
+                class="span9-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span10-yFxxXY -sfnsmono-regular-normal-cornflower-14-9px"
+                >'ucurr_id'</span
+              ><span
+                class="span11-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span
+                class="span12-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >int</span
+              ><span
+                class="span13-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+              >
+                id;<br />&nbsp;&nbsp;</span
+              ><span class="span14-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >@JsonKey</span
+              ><span
+                class="span15-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(name</span
+              ><span class="span16-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >:</span
+              ><span
+                class="span17-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span18-yFxxXY -sfnsmono-regular-normal-cornflower-14-9px"
+                >'ucurr_codigo'</span
+              ><span
+                class="span19-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span
+                class="span20-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >String</span
+              ><span
+                class="span21-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+              >
+                code;<br />&nbsp;&nbsp;</span
+              ><span class="span22-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >@JsonKey</span
+              ><span
+                class="span23-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(name</span
+              ><span class="span24-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >:</span
+              ><span
+                class="span25-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span26-yFxxXY -sfnsmono-regular-normal-cornflower-14-9px"
+                >'ucurr_nome'</span
+              ><span
+                class="span27-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span
+                class="span28-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >String</span
+              ><span
+                class="span29-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+              >
+                name;<br />&nbsp;&nbsp;</span
+              ><span class="span30-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >@JsonKey</span
+              ><span
+                class="span31-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(name</span
+              ><span class="span32-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >:</span
+              ><span
+                class="span33-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span34-yFxxXY -sfnsmono-regular-normal-cornflower-14-9px"
+                >'creditos_ects'</span
+              ><span
+                class="span35-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span
+                class="span36-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >num</span
+              ><span class="span37-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >?</span
+              ><span
+                class="span38-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+              >
+                ects;<br /></span
+              ><span class="span39-yFxxXY"><br /></span
+              ><span
+                class="span40-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;&nbsp;</span
+              ><span class="span41-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >factory</span
+              ><span
+                class="span42-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span43-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >CourseUnit</span
+              ><span
+                class="span44-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >.</span
+              ><span class="span45-yFxxXY">fromJson</span
+              ><span
+                class="span46-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(</span
+              ><span
+                class="span47-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >Map</span
+              ><span
+                class="span48-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&lt;</span
+              ><span
+                class="span49-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >String</span
+              ><span
+                class="span50-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >, </span
+              ><span
+                class="span51-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >dynamic</span
+              ><span
+                class="span52-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&gt; json) </span
+              ><span class="span53-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >=&gt;<br /></span
+              ><span
+                class="span54-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span55-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >_$CourseUnitFromJson</span
+              ><span
+                class="span56-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(json);<br /></span
+              ><span class="span57-yFxxXY"><br /></span
+              ><span
+                class="span58-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;&nbsp;</span
+              ><span
+                class="span59-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >Map</span
+              ><span
+                class="span60-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&lt;</span
+              ><span
+                class="span61-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >String</span
+              ><span
+                class="span62-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >, </span
+              ><span
+                class="span63-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >dynamic</span
+              ><span
+                class="span64-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&gt; </span
+              ><span class="span65-yFxxXY">toJson</span
+              ><span
+                class="span66-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >() </span
+              ><span class="span67-yFxxXY -sfnsmono-regular-normal-froly-14-9px"
+                >=&gt;</span
+              ><span
+                class="span68-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >&nbsp;</span
+              ><span
+                class="span69-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >_$CourseUnitToJson</span
+              ><span
+                class="span70-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >(</span
+              ><span
+                class="span71-yFxxXY -sfnsmono-regular-normal-malibu-14-9px"
+                >this</span
+              ><span
+                class="span72-yFxxXY -sfnsmono-regular-normal-mercury-14-9px"
+                >);<br />}</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="frame-41-hbifyF frame-41" data-id="3207:1058">
+        <div class="group-54-PTB215" data-id="3206:393">
+          <div class="group-52-3xOF6W" data-id="3206:385">
+            <div class="frame-32-X2J4xy frame-32" data-id="3207:1059">
+              <div
+                class="duas-pastas-duas-packages-0dxdex jockeyone-normal-black-48px"
+                data-id="3207:1060"
+              >
+                Duas pastas, duas packages
+              </div>
+              <p
+                class="a-partir-de-agora-a-0dxdex fenix-normal-black-32px"
+                data-id="3207:1061"
+              >
+                <span class="span0-DxmQwK fenix-normal-black-32px"
+                  >A partir de agora a UNI passa a ser um projeto
+                  multi-package:<br />Uma </span
+                ><span class="span1-DxmQwK daibannasil-medium-black-32px"
+                  >package</span
+                ><span class="span2-DxmQwK fenix-normal-black-32px">
+                  focada exclusivamente no design e outra na lógica da
+                  aplicação.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-59-PTB215 frame-59" data-id="3218:555">
+          <div
+            class="uni-ZoT9pX jetbrainsmono-normal-black-32px"
+            data-id="3218:544"
+          >
+            <span class="span0-YcLjQC jetbrainsmono-normal-black-32px">/</span
+            ><span class="span1-YcLjQC jetbrainsmono-bold-black-32px">uni</span>
+          </div>
+          <img
+            class="vector-ZoT9pX vector"
+            data-id="3218:554"
+            src="./1.9.0_files/vector-1.svg"
+            alt="Vector"
+          />
+          <div class="frame-59-ZoT9pX frame-59" data-id="3218:550">
+            <div
+              class="packagesuni_app-k1eHWw jetbrainsmono-normal-black-32px"
+              data-id="3218:546"
+            >
+              <span class="span0-6NX7cO jetbrainsmono-normal-black-32px"
+                >/packages/</span
+              ><span class="span1-6NX7cO jetbrainsmono-bold-black-32px"
+                >uni_app</span
+              >
+            </div>
+            <div
+              class="packagesuni_ui-k1eHWw jetbrainsmono-normal-black-32px"
+              data-id="3218:548"
+            >
+              <span class="span0-DEYPiG jetbrainsmono-normal-black-32px"
+                >/packages/</span
+              ><span class="span1-DEYPiG jetbrainsmono-bold-black-32px"
+                >uni_ui&nbsp;&nbsp;
+              </span>
+            </div>
+          </div>
+        </div>
+        <p
+          class="o-que-ser-que-vem-a-PTB215 fenix-normal-black-32px"
+          data-id="3218:561"
+        >
+          O que será que vem aí?
+        </p>
+      </div>
+      <div class="frame-42-mhNbjF" data-id="3109:138">
+        <div class="frame-33-2dmD1y" data-id="3109:139">
+          <div
+            class="um-agradecimento-s-TgOVn4 fenix-normal-black-32px"
+            data-id="3109:140"
+          >
+            Um agradecimento às
+          </div>
+          <div class="pessoas-envolvidas-TgOVn4" data-id="3109:141">
+            Pessoas envolvidas
+          </div>
+        </div>
+        <div class="frame-46-2dmD1y" data-id="3109:142">
+          <article class="person" data-id="3198:988">
+            <div class="frame-26085575" data-id="I3198:988;3198:403">
+              <img
+                class="img_4713-1-F5cBVi img_4713-1"
+                data-id="I3198:988;3198:404"
+                src="./1.9.0_files/img-4713-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bruno-mendes-F5cBVi fenix-normal-black-32px"
+                data-id="I3198:988;3198:405"
+              >
+                Bruno Mendes
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3192:614">
+            <div class="frame-26085575" data-id="I3192:614;3198:1037">
+              <img
+                class="img_4713-1-tf37nE img_4713-1"
+                data-id="I3192:614;3198:1038"
+                src="./1.9.0_files/img-4713-1-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="diogo-goiana-tf37nE fenix-normal-black-32px"
+                data-id="I3192:614;3198:1039"
+              >
+                Diogo Goiana
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3109:152">
+            <div class="frame-26085575" data-id="I3109:152;3053:455">
+              <img
+                class="img_4713-1-xaZopT img_4713-1"
+                data-id="I3109:152;3053:456"
+                src="./1.9.0_files/img-4713-1-2@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="andr-lima-xaZopT fenix-normal-black-32px"
+                data-id="I3109:152;3053:457"
+              >
+                André Lima
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3198:1022">
+            <div class="frame-26085575" data-id="I3198:1022;3053:463">
+              <img
+                class="img_4713-1-GUj4Ov img_4713-1"
+                data-id="I3198:1022;3053:464"
+                src="./1.9.0_files/img-4713-1-3@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="vtor-pires-GUj4Ov fenix-normal-black-32px"
+                data-id="I3198:1022;3053:465"
+              >
+                Vítor Pires
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3109:146">
+            <div class="frame-26085575" data-id="I3109:146;3053:435">
+              <img
+                class="img_4713-1-BXFEQ8 img_4713-1"
+                data-id="I3109:146;3053:436"
+                src="./1.9.0_files/img-4713-1-4@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bruno-oliveira-BXFEQ8 fenix-normal-black-32px"
+                data-id="I3109:146;3053:437"
+              >
+                Bruno Oliveira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3109:149">
+            <div class="frame-26085575" data-id="I3109:149;3053:447">
+              <img
+                class="img_4713-1-kUaI2U img_4713-1"
+                data-id="I3109:149;3053:448"
+                src="./1.9.0_files/img-4713-1-5@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="clara-sousa-kUaI2U fenix-normal-black-32px"
+                data-id="I3109:149;3053:449"
+              >
+                Clara Sousa
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3198:983">
+            <div class="frame-26085575" data-id="I3198:983;3053:459">
+              <img
+                class="img_4713-1-6VHwmt img_4713-1"
+                data-id="I3198:983;3053:460"
+                src="./1.9.0_files/img-4713-1-6@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="lus-duarte-6VHwmt fenix-normal-black-32px"
+                data-id="I3198:983;3053:461"
+              >
+                Luís Duarte
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3109:147">
+            <div class="frame-26085575" data-id="I3109:147;3052:369">
+              <img
+                class="img_4713-1-cohfxk img_4713-1"
+                data-id="I3109:147;3052:366"
+                src="./1.9.0_files/img-4713-1-7@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="joo-torre-pereira-cohfxk fenix-normal-black-32px"
+                data-id="I3109:147;3052:365"
+              >
+                João Torre Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3198:1014">
+            <div class="frame-26085575" data-id="I3198:1014;3053:451">
+              <img
+                class="img_4713-1-FS6dIw img_4713-1"
+                data-id="I3198:1014;3053:452"
+                src="./1.9.0_files/img-4713-1-8@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="rubem-neto-FS6dIw fenix-normal-black-32px"
+                data-id="I3198:1014;3053:453"
+              >
+                Rubem Neto
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3198:993">
+            <div class="frame-26085575" data-id="I3198:993;3198:972">
+              <img
+                class="img_4713-1-GPyjYm img_4713-1"
+                data-id="I3198:993;3198:973"
+                src="./1.9.0_files/img-4713-1-9@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bartek-pacia-GPyjYm fenix-normal-black-32px"
+                data-id="I3198:993;3198:974"
+              >
+                Bartek Pacia
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div
+        class="tudo-por-agora-mhNbjF fenix-normal-black-32px"
+        data-id="3109:154"
+      >
+        É tudo por agora!
+      </div>
+      <div class="frame-47-mhNbjF" data-id="3109:155">
+        <img
+          class="logo_2018-1-2-aPPwut"
+          data-id="3109:156"
+          src="./1.9.0_files/logo-2018--1--2.svg"
+          alt="logo_2018 (1) 2"
+        />
+        <div class="niaefeup-aPPwut" data-id="3109:178">NIAEFEUP</div>
+        <div class="projetos-aPPwut fenix-normal-black-32px" data-id="3109:179">
+          Projetos
+        </div>
+      </div>
+    </div>
+    <div class="mobile screen" data-id="3220:639">
+      <div class="frame-37-LP8vkM" data-id="3220:640">
+        <img
+          class="group-48-WNXEpW"
+          data-id="3220:641"
+          src="./1.9.0_files/group-48@2x.png"
+          alt="Group 48"
+        />
+        <div class="frame-49-WNXEpW" data-id="3220:645">
+          <h1 class="title-ktx0qO" data-id="3220:646">Nota de Release</h1>
+          <div class="uni-190-ktx0qO" data-id="3220:647">UNI 1.9.0</div>
+        </div>
+        <div class="rectangle-498-WNXEpW" data-id="3220:648"></div>
+      </div>
+      <div class="frame-29-LP8vkM" data-id="3220:649">
+        <div
+          class="autenticao-federada-9EiBzQ jockeyone-normal-black-40px"
+          data-id="3220:650"
+        >
+          Autenticação Federada
+        </div>
+        <div class="frame-52-9EiBzQ" data-id="3220:651">
+          <div class="group-50-3mbeVc" data-id="3220:652">
+            <div class="rectangle-501-KGc9a9" data-id="3220:653"></div>
+            <img
+              class="aai-logo-1-KGc9a9"
+              data-id="3220:654"
+              src="./1.9.0_files/aai-logo-1.png"
+              alt="Aai Logo 1"
+            />
+          </div>
+          <p class="fcil-rpida-segura-3mbeVc" data-id="3220:655">
+            <span class="span0-2oVl7x jetbrainsmono-bold-cerulean-24px">+ </span
+            ><span class="span1-2oVl7x fenix-normal-black-24px"
+              >Fácil, <br /></span
+            ><span class="span2-2oVl7x jetbrainsmono-bold-cerulean-24px"
+              >+ </span
+            ><span class="span3-2oVl7x fenix-normal-black-24px"
+              >Rápida <br /></span
+            ><span class="span4-2oVl7x jetbrainsmono-bold-cerulean-24px"
+              >+ </span
+            ><span class="span5-2oVl7x fenix-normal-black-24px">Segura!</span>
+          </p>
+        </div>
+      </div>
+      <div class="frame-40-LP8vkM" data-id="3220:656">
+        <p
+          class="nova-face-pgina-das-cadeiras-KrJyjp jockeyone-normal-black-40px"
+          data-id="3220:657"
+        >
+          Nova face à página das cadeiras!
+        </p>
+        <div class="group-43-KrJyjp" data-id="3220:658">
+          <p
+            class="agora-possvel-ver-os-TKrgQA fenix-normal-black-24px"
+            data-id="3220:659"
+          >
+            <span class="span0-Q0rRgt fenix-normal-black-24px"
+              >Agora é possível ver os professores e aceder aos dados das
+              cadeiras de forma mais </span
+            ><span class="span1-Q0rRgt daibannasil-medium-black-24px"
+              >clean</span
+            >
+          </p>
+        </div>
+        <img
+          class="group-51-KrJyjp"
+          data-id="3220:660"
+          src="./1.9.0_files/group-51-1@2x.png"
+          alt="Group 51"
+        />
+        <p
+          class="com-as-capas-dos-liv-KrJyjp fenix-normal-black-24px"
+          data-id="3220:667"
+        >
+          Com as capas dos livros que devias de ler...
+        </p>
+        <img
+          class="screenshot-2024-09-25-at-224907-1-1-KrJyjp"
+          data-id="3223:825"
+          src="./1.9.0_files/screenshot-2024-09-25-at-22-49-07-1-1-1.svg"
+          alt="Screenshot 2024-09-25 at 22.49.07 1 1"
+        />
+      </div>
+      <div class="frame-41-LP8vkM frame-41" data-id="3220:669">
+        <div class="group-58-bSOckh" data-id="3220:670">
+          <div class="group-57-zsCgE5" data-id="3220:671">
+            <div class="frame-32-ZG9LZW frame-32" data-id="3220:672">
+              <p
+                class="api-api-e-api-mais-ap-is-por-favor-Vbx5xN jockeyone-normal-black-40px"
+                data-id="3220:673"
+              >
+                API, API e API. <br />Mais APIs, por favor
+              </p>
+              <p
+                class="a-uni-alimentada-com-Vbx5xN fenix-normal-black-24px"
+                data-id="3220:674"
+              >
+                <span class="span0-Amt53r fenix-normal-black-24px"
+                  >A UNI é alimentada com dados exteriores prevenientes daquilo
+                  a que chamamos API (</span
+                ><span class="span1-Amt53r daibannasil-medium-black-24px"
+                  >Application Programming Interface</span
+                ><span class="span2-Amt53r fenix-normal-black-24px"
+                  >).<br /><br />Estas novas APIs trazem a informação no formato
+                  JSON, um tipo de dados muito mais simples de manipular e mais
+                  resistente a </span
+                ><span class="span3-Amt53r daibannasil-medium-black-24px"
+                  >bugs</span
+                ><span class="span4-Amt53r fenix-normal-black-24px">.</span>
+              </p>
+              <p
+                class="estas-so-as-transies-Vbx5xN fenix-normal-black-24px"
+                data-id="3220:675"
+              >
+                <span class="span0-eSqfSN fenix-normal-black-24px"
+                  >Estas são as transições recentes para APIs </span
+                ><span class="span1-eSqfSN daibannasil-medium-black-24px"
+                  >nice</span
+                ><span class="span2-eSqfSN fenix-normal-black-24px">:</span>
+              </p>
+              <p
+                class="horrio-do-estudante-Vbx5xN fenix-normal-black-24px"
+                data-id="3222:803"
+              >
+                &gt; Horário do Estudante<br />&gt; Ocupação da Biblioteca<br />&gt;
+                Informações de uma cadeira
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-41-c2r8eh frame-41" data-id="3220:681">
+        <div class="frame-32-VyoKEq frame-32" data-id="3220:682">
+          <div
+            class="auto-serializao-l9EZHO jockeyone-normal-black-40px"
+            data-id="3220:683"
+          >
+            Auto-Serialização
+          </div>
+          <p
+            class="serializao-o-process-l9EZHO fenix-normal-black-24px"
+            data-id="3220:684"
+          >
+            <span class="span0-PLtUMI fenix-normal-black-24px"
+              >Serialização é o processo de converter uma estrutura de dados,
+              por exemplo JSON, para um objeto dart.<br /><br />Antigamente este
+              processo era penoso porque era necessário criar funções
+              específicas.<br /><br />Isso acabou com a adoção do </span
+            ><span class="span1-PLtUMI">json_serializable</span>
+          </p>
+        </div>
+        <div class="group-21-VyoKEq" data-id="3220:685">
+          <div class="group-60-ZweGBv" data-id="3223:815">
+            <img
+              class="rectangle-485-aF7L5x"
+              data-id="3220:686"
+              src="./1.9.0_files/rectangle-485-1.png"
+              alt="Rectangle 485"
+            />
+            <div
+              class="json_serializable-aF7L5x jockeyone-normal-black-40px"
+              data-id="3220:687"
+            >
+              json_serializable
+            </div>
+            <p class="automatically-genera-aF7L5x" data-id="3220:688">
+              Automatically generate code for converting to and from JSON by
+              annotating Dart classes.
+            </p>
+          </div>
+        </div>
+        <p
+          class="vamos-a-um-exemplo-d-VyoKEq fenix-normal-black-24px"
+          data-id="3220:689"
+        >
+          Vamos a um exemplo do nosso modelo CourseUnit<br />Na verdade, ele é
+          bem maior!
+        </p>
+        <div class="frame-59-VyoKEq frame-59" data-id="3220:690">
+          <div
+            class="code-snippet-wrapper-jiT8fd code-snippet-wrapper"
+            data-id="3220:691"
+          >
+            <div
+              class="code-line-numbers-xgLczb code-line-numbers"
+              data-id="3220:692"
+            >
+              1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24
+            </div>
+            <p class="code-snippet-xgLczb code-snippet" data-id="3220:693">
+              <span class="span0-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >class</span
+              ><span class="span1-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span2-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >CourseUnit</span
+              ><span
+                class="span3-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                {<br />&nbsp;&nbsp;</span
+              ><span class="span4-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >int</span
+              ><span
+                class="span5-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                id;<br />&nbsp;&nbsp;</span
+              ><span class="span6-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span7-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                code;<br />&nbsp;&nbsp;</span
+              ><span class="span8-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span9-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                name;<br />&nbsp;&nbsp;</span
+              ><span class="span10-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >num</span
+              ><span class="span11-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >?</span
+              ><span
+                class="span12-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                ects;<br /></span
+              ><span class="span13-eCFG9z"><br /></span
+              ><span
+                class="span14-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;&nbsp;</span
+              ><span class="span15-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >static</span
+              ><span
+                class="span16-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span17-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >CourseUnit</span
+              ><span class="span18-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >?</span
+              ><span
+                class="span19-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span20-eCFG9z">fromJson</span
+              ><span
+                class="span21-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >(</span
+              ><span class="span22-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >Map</span
+              ><span
+                class="span23-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&lt;</span
+              ><span class="span24-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span25-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >, </span
+              ><span class="span26-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >dynamic</span
+              ><span
+                class="span27-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&gt; data) {<br />&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="span28-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >return</span
+              ><span
+                class="span29-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span30-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >CourseUnit</span
+              ><span
+                class="span31-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</span
+              ><span class="span32-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span33-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                data[</span
+              ><span
+                class="span34-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'ucurr_id'</span
+              ><span
+                class="span35-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >] </span
+              ><span class="span36-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >as</span
+              ><span
+                class="span37-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span38-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >int</span
+              ><span
+                class="span39-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</span
+              ><span class="span40-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span41-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                data[</span
+              ><span
+                class="span42-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'ucurr_codigo'</span
+              ><span
+                class="span43-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >] </span
+              ><span class="span44-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >as</span
+              ><span
+                class="span45-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span46-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span47-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</span
+              ><span class="span48-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span49-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                data[</span
+              ><span
+                class="span50-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'ucurr_nome'</span
+              ><span
+                class="span51-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >] </span
+              ><span class="span52-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >as</span
+              ><span
+                class="span53-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span54-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span55-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ects</span
+              ><span class="span56-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span57-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                data[</span
+              ><span
+                class="span58-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'creditos_ects'</span
+              ><span
+                class="span59-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >] </span
+              ><span class="span60-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >as</span
+              ><span
+                class="span61-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;</span
+              ><span class="span62-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >num</span
+              ><span class="span63-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >?</span
+              ><span
+                class="span64-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br />&nbsp;&nbsp;}<br /></span
+              ><span class="span65-eCFG9z"><br /></span
+              ><span
+                class="span66-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&nbsp;&nbsp;</span
+              ><span class="span67-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >Map</span
+              ><span
+                class="span68-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&lt;</span
+              ><span class="span69-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >String</span
+              ><span
+                class="span70-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >, </span
+              ><span class="span71-eCFG9z -sfnsmono-regular-normal-malibu-8-1px"
+                >dynamic</span
+              ><span
+                class="span72-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >&gt; </span
+              ><span class="span73-eCFG9z">toMap</span
+              ><span
+                class="span74-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+                >() {<br />&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="span75-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >return</span
+              ><span
+                class="span76-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span77-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'id'</span
+              ><span class="span78-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span79-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                id,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span80-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'code'</span
+              ><span class="span81-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span82-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                code,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span83-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'name'</span
+              ><span class="span84-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span85-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                name,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span
+                class="span86-eCFG9z -sfnsmono-regular-normal-cornflower-8-1px"
+                >'ects'</span
+              ><span class="span87-eCFG9z -sfnsmono-regular-normal-froly-8-1px"
+                >:</span
+              ><span
+                class="span88-eCFG9z -sfnsmono-regular-normal-mercury-8-1px"
+              >
+                ects,<br />&nbsp;&nbsp;&nbsp;&nbsp;};<br />&nbsp;&nbsp;}<br />}</span
+              >
+            </p>
+          </div>
+          <img
+            class="vector-jiT8fd vector"
+            data-id="3220:694"
+            src="./1.9.0_files/vector-2.svg"
+            alt="Vector"
+          />
+          <div
+            class="code-snippet-wrapper-QDutUj code-snippet-wrapper"
+            data-id="3220:695"
+          >
+            <div
+              class="code-line-numbers-zjiNnl code-line-numbers"
+              data-id="3220:696"
+            >
+              1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16
+            </div>
+            <p class="code-snippet-zjiNnl code-snippet" data-id="3220:697">
+              <span class="span0-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >@JsonSerializable</span
+              ><span class="span1-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >()<br /></span
+              ><span class="span2-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >class</span
+              ><span class="span3-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span class="span4-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >CourseUnit</span
+              ><span
+                class="span5-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+              >
+                {<br />&nbsp;&nbsp;</span
+              ><span class="span6-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >@JsonKey</span
+              ><span class="span7-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(name</span
+              ><span class="span8-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >:</span
+              ><span class="span9-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span
+                class="span10-bbpqBr -sfnsmono-regular-normal-cornflower-7-9px"
+                >'ucurr_id'</span
+              ><span
+                class="span11-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span class="span12-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >int</span
+              ><span
+                class="span13-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+              >
+                id;<br />&nbsp;&nbsp;</span
+              ><span class="span14-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >@JsonKey</span
+              ><span
+                class="span15-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(name</span
+              ><span class="span16-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >:</span
+              ><span
+                class="span17-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span
+                class="span18-bbpqBr -sfnsmono-regular-normal-cornflower-7-9px"
+                >'ucurr_codigo'</span
+              ><span
+                class="span19-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span class="span20-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >String</span
+              ><span
+                class="span21-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+              >
+                code;<br />&nbsp;&nbsp;</span
+              ><span class="span22-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >@JsonKey</span
+              ><span
+                class="span23-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(name</span
+              ><span class="span24-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >:</span
+              ><span
+                class="span25-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span
+                class="span26-bbpqBr -sfnsmono-regular-normal-cornflower-7-9px"
+                >'ucurr_nome'</span
+              ><span
+                class="span27-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span class="span28-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >String</span
+              ><span
+                class="span29-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+              >
+                name;<br />&nbsp;&nbsp;</span
+              ><span class="span30-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >@JsonKey</span
+              ><span
+                class="span31-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(name</span
+              ><span class="span32-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >:</span
+              ><span
+                class="span33-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span
+                class="span34-bbpqBr -sfnsmono-regular-normal-cornflower-7-9px"
+                >'creditos_ects'</span
+              ><span
+                class="span35-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >)<br />&nbsp;&nbsp;</span
+              ><span class="span36-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >num</span
+              ><span class="span37-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >?</span
+              ><span
+                class="span38-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+              >
+                ects;<br /></span
+              ><span class="span39-bbpqBr"><br /></span
+              ><span
+                class="span40-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;&nbsp;</span
+              ><span class="span41-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >factory</span
+              ><span
+                class="span42-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span class="span43-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >CourseUnit</span
+              ><span
+                class="span44-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >.</span
+              ><span class="span45-bbpqBr">fromJson</span
+              ><span
+                class="span46-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(</span
+              ><span class="span47-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >Map</span
+              ><span
+                class="span48-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&lt;</span
+              ><span class="span49-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >String</span
+              ><span
+                class="span50-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >, </span
+              ><span class="span51-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >dynamic</span
+              ><span
+                class="span52-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&gt; json) </span
+              ><span class="span53-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >=&gt;<br /></span
+              ><span
+                class="span54-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="span55-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >_$CourseUnitFromJson</span
+              ><span
+                class="span56-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(json);<br /></span
+              ><span class="span57-bbpqBr"><br /></span
+              ><span
+                class="span58-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;&nbsp;</span
+              ><span class="span59-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >Map</span
+              ><span
+                class="span60-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&lt;</span
+              ><span class="span61-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >String</span
+              ><span
+                class="span62-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >, </span
+              ><span class="span63-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >dynamic</span
+              ><span
+                class="span64-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&gt; </span
+              ><span class="span65-bbpqBr">toJson</span
+              ><span
+                class="span66-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >() </span
+              ><span class="span67-bbpqBr -sfnsmono-regular-normal-froly-7-9px"
+                >=&gt;</span
+              ><span
+                class="span68-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >&nbsp;</span
+              ><span class="span69-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >_$CourseUnitToJson</span
+              ><span
+                class="span70-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >(</span
+              ><span class="span71-bbpqBr -sfnsmono-regular-normal-malibu-7-9px"
+                >this</span
+              ><span
+                class="span72-bbpqBr -sfnsmono-regular-normal-mercury-7-9px"
+                >);<br />}</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="frame-41-gz9XG1 frame-41" data-id="3220:698">
+        <div class="group-54-xYk4kX" data-id="3220:699">
+          <div class="group-52-wx9Ix7" data-id="3220:700">
+            <div class="frame-32-b3D2sT frame-32" data-id="3220:701">
+              <div
+                class="duas-pastas-duas-packages-Vg2svA jockeyone-normal-black-40px"
+                data-id="3220:702"
+              >
+                Duas pastas, duas packages
+              </div>
+              <p
+                class="a-partir-de-agora-a-Vg2svA fenix-normal-black-24px"
+                data-id="3220:703"
+              >
+                <span class="span0-PVVeqx fenix-normal-black-24px"
+                  >A partir de agora a UNI passa a ser um projeto
+                  multi-package:<br />Uma </span
+                ><span class="span1-PVVeqx daibannasil-medium-black-24px"
+                  >package</span
+                ><span class="span2-PVVeqx fenix-normal-black-24px">
+                  focada exclusivamente no design e outra na lógica da
+                  aplicação.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-59-xYk4kX frame-59" data-id="3220:704">
+          <div
+            class="uni-adTFSx jetbrainsmono-normal-black-32px"
+            data-id="3220:705"
+          >
+            <span class="span0-SwRkxt jetbrainsmono-normal-black-32px">/</span
+            ><span class="span1-SwRkxt jetbrainsmono-bold-black-32px">uni</span>
+          </div>
+          <img
+            class="vector-adTFSx vector"
+            data-id="3220:706"
+            src="./1.9.0_files/vector-3.svg"
+            alt="Vector"
+          />
+          <div class="frame-59-adTFSx frame-59" data-id="3220:707">
+            <div
+              class="packagesuni_app-FaHx9F jetbrainsmono-normal-black-24px"
+              data-id="3220:708"
+            >
+              <span class="span0-v9YtAK jetbrainsmono-normal-black-24px"
+                >/packages/</span
+              ><span class="span1-v9YtAK">uni_app</span>
+            </div>
+            <div
+              class="packagesuni_ui-FaHx9F jetbrainsmono-normal-black-24px"
+              data-id="3220:709"
+            >
+              <span class="span0-ThILEY jetbrainsmono-normal-black-24px"
+                >/packages/</span
+              ><span class="span1-ThILEY">uni_ui&nbsp;&nbsp; </span>
+            </div>
+          </div>
+        </div>
+        <p
+          class="o-que-ser-que-vem-a-xYk4kX fenix-normal-black-24px"
+          data-id="3220:710"
+        >
+          O que será que vem aí?
+        </p>
+      </div>
+      <div class="frame-42-LP8vkM" data-id="3220:730">
+        <div class="frame-33-hRzdOc" data-id="3220:731">
+          <div
+            class="um-agradecimento-s-1FanxZ fenix-normal-black-24px"
+            data-id="3220:732"
+          >
+            Um agradecimento às
+          </div>
+          <div class="pessoas-envolvidas-1FanxZ" data-id="3220:733">
+            Pessoas envolvidas
+          </div>
+        </div>
+        <div class="frame-46-hRzdOc" data-id="3220:734">
+          <article class="person" data-id="3220:735">
+            <div class="frame-26085575" data-id="I3220:735;3198:403">
+              <img
+                class="img_4713-1-0hgtuI img_4713-1"
+                data-id="I3220:735;3198:404"
+                src="./1.9.0_files/img-4713-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bruno-mendes-0hgtuI fenix-normal-black-32px"
+                data-id="I3220:735;3198:405"
+              >
+                Bruno Mendes
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:736">
+            <div class="frame-26085575" data-id="I3220:736;3198:1037">
+              <img
+                class="img_4713-1-DvNGr0 img_4713-1"
+                data-id="I3220:736;3198:1038"
+                src="./1.9.0_files/img-4713-1-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="diogo-goiana-DvNGr0 fenix-normal-black-32px"
+                data-id="I3220:736;3198:1039"
+              >
+                Diogo Goiana
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:737">
+            <div class="frame-26085575" data-id="I3220:737;3053:455">
+              <img
+                class="img_4713-1-hutevj img_4713-1"
+                data-id="I3220:737;3053:456"
+                src="./1.9.0_files/img-4713-1-2@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="andr-lima-hutevj fenix-normal-black-32px"
+                data-id="I3220:737;3053:457"
+              >
+                André Lima
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:738">
+            <div class="frame-26085575" data-id="I3220:738;3053:463">
+              <img
+                class="img_4713-1-VhjxTM img_4713-1"
+                data-id="I3220:738;3053:464"
+                src="./1.9.0_files/img-4713-1-3@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="vtor-pires-VhjxTM fenix-normal-black-32px"
+                data-id="I3220:738;3053:465"
+              >
+                Vítor Pires
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:739">
+            <div class="frame-26085575" data-id="I3220:739;3053:435">
+              <img
+                class="img_4713-1-feRDbg img_4713-1"
+                data-id="I3220:739;3053:436"
+                src="./1.9.0_files/img-4713-1-4@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bruno-oliveira-feRDbg fenix-normal-black-32px"
+                data-id="I3220:739;3053:437"
+              >
+                Bruno Oliveira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:740">
+            <div class="frame-26085575" data-id="I3220:740;3053:447">
+              <img
+                class="img_4713-1-ngKCot img_4713-1"
+                data-id="I3220:740;3053:448"
+                src="./1.9.0_files/img-4713-1-5@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="clara-sousa-ngKCot fenix-normal-black-32px"
+                data-id="I3220:740;3053:449"
+              >
+                Clara Sousa
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:741">
+            <div class="frame-26085575" data-id="I3220:741;3053:459">
+              <img
+                class="img_4713-1-luxPVt img_4713-1"
+                data-id="I3220:741;3053:460"
+                src="./1.9.0_files/img-4713-1-6@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="lus-duarte-luxPVt fenix-normal-black-32px"
+                data-id="I3220:741;3053:461"
+              >
+                Luís Duarte
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:742">
+            <div class="frame-26085575" data-id="I3220:742;3052:369">
+              <img
+                class="img_4713-1-CYrRnB img_4713-1"
+                data-id="I3220:742;3052:366"
+                src="./1.9.0_files/img-4713-1-7@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="joo-torre-pereira-CYrRnB fenix-normal-black-32px"
+                data-id="I3220:742;3052:365"
+              >
+                João Torre Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:743">
+            <div class="frame-26085575" data-id="I3220:743;3053:451">
+              <img
+                class="img_4713-1-IxhBxN img_4713-1"
+                data-id="I3220:743;3053:452"
+                src="./1.9.0_files/img-4713-1-8@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="rubem-neto-IxhBxN fenix-normal-black-32px"
+                data-id="I3220:743;3053:453"
+              >
+                Rubem Neto
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3220:744">
+            <div class="frame-26085575" data-id="I3220:744;3198:972">
+              <img
+                class="img_4713-1-wuyMJg img_4713-1"
+                data-id="I3220:744;3198:973"
+                src="./1.9.0_files/img-4713-1-9@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="bartek-pacia-wuyMJg fenix-normal-black-32px"
+                data-id="I3220:744;3198:974"
+              >
+                Bartek Pacia
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div
+        class="tudo-por-agora-LP8vkM fenix-normal-black-24px"
+        data-id="3220:745"
+      >
+        É tudo por agora!
+      </div>
+      <div class="frame-47-LP8vkM" data-id="3220:746">
+        <img
+          class="logo_2018-1-2-WbpxgG"
+          data-id="3220:747"
+          src="./1.9.0_files/logo-2018--1--2-1.svg"
+          alt="logo_2018 (1) 2"
+        />
+        <div class="niaefeup-WbpxgG" data-id="3220:769">NIAEFEUP</div>
+        <div class="projetos-WbpxgG fenix-normal-black-32px" data-id="3220:770">
+          Projetos
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
