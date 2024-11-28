@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      @import url("https://fonts.googleapis.com/css?family=Kumbh+Sans:700,800|JetBrains+Mono:500|Jockey+One:400|Fenix:400|Azeret+Mono:400|Dai+Banna+SIL:400,400italic");
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .component-wrapper a {
+        display: contents;
+        pointer-events: auto;
+        text-decoration: none;
+      }
+
+      .component-wrapper * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe {
+        pointer-events: auto;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .screen a {
+        display: contents;
+        text-decoration: none;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .container-center-vertical > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .container-center-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+        width: 100%;
+      }
+
+      .container-center-horizontal > * {
+        flex-shrink: 0;
+        pointer-events: auto;
+      }
+
+      .auto-animated div {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated input {
+        --z-index: -1;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay-base {
+        display: none;
+        height: 100%;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .overlay-base.animate-appear {
+        align-items: center;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+      }
+
+      .overlay-base.animate-disappear {
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+        display: block;
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      .overlay-base.animate-disappear * {
+        pointer-events: none;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+
+      .align-self-flex-center {
+        align-self: flex-center;
+      }
+
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --black: #000000;
+        --cornflower: #9ecbff;
+        --mercury: #e1e4e8;
+        --pine-green: #007172;
+
+        --font-size-l: 36px;
+        --font-size-m: 32px;
+        --font-size-s: 24px;
+        --font-size-xl: 40px;
+        --font-size-xs: 20px;
+        --font-size-xxl: 48px;
+        --font-size-xxs: 13px;
+
+        --font-family-azeret_mono: "Azeret Mono", Helvetica;
+        --font-family-dai_banna_sil: "Dai Banna SIL", Helvetica;
+        --font-family-fenix: "Fenix", Helvetica;
+        --font-family-jetbrains_mono: "JetBrains Mono", Helvetica;
+        --font-family-jockey_one: "Jockey One", Helvetica;
+        --font-family-kumbh_sans: "Kumbh Sans", Helvetica;
+      }
+      .fenix-normal-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-fenix);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .fenix-normal-black-24px {
+        color: var(--black);
+        font-family: var(--font-family-fenix);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jockeyone-normal-black-48px {
+        color: var(--black);
+        font-family: var(--font-family-jockey_one);
+        font-size: var(--font-size-xxl);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jockeyone-normal-black-40px {
+        color: var(--black);
+        font-family: var(--font-family-jockey_one);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .azeretmono-normal-mercury-13px {
+        color: var(--mercury);
+        font-family: var(--font-family-azeret_mono);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .azeretmono-normal-cornflower-13px {
+        color: var(--cornflower);
+        font-family: var(--font-family-azeret_mono);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .jockeyone-normal-black-32px {
+        color: var(--black);
+        font-family: var(--font-family-jockey_one);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      :root {
+      }
+
+      .frame-26085575 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        left: 0px;
+        position: relative;
+        top: 22px;
+        width: 278px;
+      }
+
+      .frame-32 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0px 37px;
+        position: relative;
+      }
+
+      .image {
+        background-color: transparent;
+        object-fit: cover;
+        position: relative;
+      }
+
+      .img_4713-1 {
+        background-color: transparent;
+        height: 192px;
+        position: relative;
+      }
+
+      .person {
+        background-color: transparent;
+        height: 295px;
+        position: relative;
+        width: 278px;
+      }
+
+      /* screen - computer */
+
+      .computer {
+        align-items: center;
+        background-color: #f9fdff;
+        display: flex;
+        flex-direction: column;
+        gap: 110px;
+        left: 0px;
+        min-width: 1025px;
+        overflow: hidden;
+        padding: 28px 0px 129px;
+        position: relative;
+        top: 0px;
+      }
+
+      .computer .frame-37-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: -59.5px;
+        margin-right: -59.5px;
+        position: relative;
+        width: 1144px;
+      }
+
+      .computer .group-48-EMGjjU {
+        background-color: transparent;
+        height: 42.876953125px;
+        position: relative;
+        width: 42.87690734863281px;
+      }
+
+      .computer .frame-49-EMGjjU {
+        display: inline-flex;
+      }
+
+      .computer .title-lTZs7s {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-xxl);
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .computer .nit-sig-110-lTZs7s {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -6px;
+        position: relative;
+        text-align: center;
+        width: 365px;
+      }
+
+      .computer .rectangle-498-EMGjjU {
+        background-color: #b33636;
+        border-radius: 2.5px;
+        height: 5px;
+        position: relative;
+        width: 66px;
+      }
+
+      .computer .frame-29-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        padding: 8px 1px;
+        position: relative;
+        width: 1017px;
+      }
+
+      .computer .v-logo-o-teu-curso-atual-kN5cyD {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .computer .frame-62-kN5cyD {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 13px;
+        position: relative;
+      }
+
+      .computer .image-pNufxG {
+        height: 185px;
+        width: 368px;
+      }
+
+      .computer .image-5-pNufxG {
+        background-color: transparent;
+        height: 185px;
+        object-fit: cover;
+        position: relative;
+        width: 368px;
+      }
+
+      .computer .frame-53-kN5cyD {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        gap: 34px;
+        justify-content: center;
+        position: relative;
+        width: 679px;
+      }
+
+      .computer .na-prxima-vez-que-co-fILkvZ {
+        background-color: transparent;
+        flex: 1;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-40-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 38px;
+        margin-left: -87.5px;
+        margin-right: -87.5px;
+        max-width: 1200px;
+        position: relative;
+        width: 1200px;
+      }
+
+      .computer .horrio-1-click-R3fx37 {
+        background-color: transparent;
+        height: 66px;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 677px;
+      }
+
+      .computer .group-43-R3fx37 {
+        background-color: transparent;
+        height: 72px;
+        position: relative;
+        width: 679px;
+      }
+
+      .computer .esquece-o-labirinto-Apyr0D {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width: 677px;
+      }
+
+      .computer .image-8-R3fx37 {
+        background-color: transparent;
+        height: 250px;
+        position: relative;
+        width: 256px;
+      }
+
+      .computer .vecteezy_simple-hand-R3fx37 {
+        background-color: transparent;
+        height: 52px;
+        left: 684px;
+        object-fit: cover;
+        position: absolute;
+        top: 359px;
+        width: 42px;
+      }
+
+      .computer .frame-41-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 66px;
+        justify-content: center;
+        position: relative;
+        width: 1019px;
+      }
+
+      .computer .group-58-fSIVLn {
+        background-color: transparent;
+        height: 241px;
+        position: relative;
+        width: 851px;
+      }
+
+      .computer .group-57-RrMM6v {
+        background-color: transparent;
+        height: 241px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 851px;
+      }
+
+      .computer .frame-32-MXAj6Y {
+        left: 0px;
+        top: 0px;
+        width: 851px;
+      }
+
+      .computer .flashbang-Mki01o {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .ficavas-todo-cego-co-Mki01o {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-left: -30px;
+        margin-right: -30px;
+        position: relative;
+        text-align: center;
+        width: 837px;
+      }
+
+      .computer .frame-32-mhNbjF {
+        flex: 0 0 auto;
+        width: 1019px;
+      }
+
+      .computer .dx-developer-experience-LYG3IX {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-26085577-MF1JQ5 {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        overflow: hidden;
+        padding: 25px 10px;
+        position: relative;
+      }
+
+      .computer .antes-36eTlx {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-26085581-36eTlx {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        padding: 0px 79px 0px 0px;
+        position: relative;
+      }
+
+      .computer .group-62-7nYC37 {
+        background-color: transparent;
+        height: 212.0353240966797px;
+        position: relative;
+        width: 337px;
+      }
+
+      .computer .frame-26085580-DvDOYA {
+        align-items: flex-end;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        height: 193px;
+        justify-content: space-between;
+        left: 161px;
+        position: absolute;
+        top: 8px;
+        width: 67px;
+      }
+
+      .computer .code-AMPsGG {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .load-AMPsGG {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-26085579-DvDOYA {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        left: 0px;
+        position: absolute;
+        top: 86px;
+        width: 337px;
+      }
+
+      .computer .open-browser-KsrN0v {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .computer .build-KsrN0v {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .computer .arrow-4-DvDOYA {
+        background-color: transparent;
+        height: 58px;
+        left: 93px;
+        position: absolute;
+        top: 21px;
+        width: 60px;
+      }
+
+      .computer .arrow-2-DvDOYA {
+        background-color: transparent;
+        height: 57px;
+        left: 240px;
+        position: absolute;
+        top: 129px;
+        width: 58px;
+      }
+
+      .computer .arrow-6-DvDOYA {
+        background-color: transparent;
+        height: 61px;
+        left: 235px;
+        position: absolute;
+        top: 28px;
+        width: 65px;
+      }
+
+      .computer .arrow-5-DvDOYA {
+        background-color: transparent;
+        height: 58px;
+        left: 90px;
+        position: absolute;
+        top: 128px;
+        width: 63px;
+      }
+
+      .computer .frame-26085578-MF1JQ5 {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 85px;
+        overflow: hidden;
+        padding: 29px 0px;
+        position: relative;
+      }
+
+      .computer .depois-Y9eHG3 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .code-snippet-wrapper-Y9eHG3 {
+        align-items: flex-start;
+        background-color: #24292e;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 16px;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+      }
+
+      .computer .code-snippet-tntxTs {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-azeret_mono);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 19.5px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .computer .span0-Tfv5hn {
+        color: #b392f0;
+        font-style: normal;
+      }
+
+      .computer .span1-Tfv5hn {
+        font-style: normal;
+      }
+
+      .computer .span2-Tfv5hn {
+        font-style: normal;
+      }
+
+      .computer .span3-Tfv5hn {
+        font-style: normal;
+      }
+
+      .computer .span4-Tfv5hn {
+        font-style: normal;
+      }
+
+      .computer .frame-26085576-9bTFfx {
+        gap: 10px;
+      }
+
+      .computer .frame-21-edFOxh {
+        height: 266px;
+      }
+
+      .computer .webpack-Pd6YYM {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: right;
+        width: fit-content;
+      }
+
+      .computer .static-module-bundle-Pd6YYM {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-m);
+        font-style: italic;
+        font-weight: 400;
+        height: 99px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: right;
+        width: 469px;
+      }
+
+      .computer .frame-49-mhNbjF {
+        display: flex;
+        gap: 37px;
+        justify-content: center;
+        width: 1019px;
+      }
+
+      .computer .group-54-84x0oJ {
+        align-self: stretch;
+        background-color: transparent;
+        height: 580px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .group-52-cJvLDV {
+        background-color: transparent;
+        height: 580px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 1019px;
+      }
+
+      .computer .frame-32-rkipxQ {
+        left: 0px;
+        top: 0px;
+        width: 1019px;
+      }
+
+      .computer .uiux-melhor-FJvxzc {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .realmente-o-sigarra-FJvxzc {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 836px;
+      }
+
+      .computer .frame-26085576-FJvxzc {
+        gap: 10px;
+      }
+
+      .computer .frame-21-CCqYjx {
+        height: 197px;
+      }
+
+      .computer .tsx-vtwWpQ {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: right;
+        width: fit-content;
+      }
+
+      .computer .type-script-meets-ht-vtwWpQ {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-m);
+        font-style: italic;
+        font-weight: 400;
+        height: 99px;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-bottom: -8px;
+        position: relative;
+        text-align: right;
+        width: 469px;
+      }
+
+      .computer .j-agora-consegues-im-84x0oJ {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1019px;
+      }
+
+      .computer .frame-42-mhNbjF {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 37px;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .frame-33-2dmD1y {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .um-agradecimento-s-TgOVn4 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .pessoas-envolvidas-TgOVn4 {
+        align-self: stretch;
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-xxl);
+        font-style: normal;
+        font-weight: 800;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-46-2dmD1y {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 0px 14px;
+        justify-content: center;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .computer .image-F5cBVi {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .joo-pereira-F5cBVi {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .image-tf37nE {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .antnio-santos-tf37nE {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .image-xaZopT {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .jaime-fonseca-xaZopT {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-GUj4Ov {
+        width: 192.5234375px;
+      }
+
+      .computer .joo-torre-pereira-GUj4Ov {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .image-BXFEQ8 {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .leonor-couto-BXFEQ8 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-kUaI2U {
+        width: 192px;
+      }
+
+      .computer .lus-duarte-kUaI2U {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .img_4713-1-6VHwmt {
+        object-fit: cover;
+        width: 192.5234375px;
+      }
+
+      .computer .simo-nery-6VHwmt {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .image-cohfxk {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .sofia-merino-cohfxk {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .image-FS6dIw {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .computer .toms-ramos-FS6dIw {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .tudo-por-agora-mhNbjF {
+        align-self: stretch;
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .computer .frame-47-mhNbjF {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 11px;
+        margin-left: -59.5px;
+        margin-right: -59.5px;
+        position: relative;
+      }
+
+      .computer .logo_2018-1-2-aPPwut {
+        background-color: transparent;
+        height: 121px;
+        position: relative;
+        width: 118px;
+      }
+
+      .computer .niaefeup-aPPwut {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 700;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: 1144px;
+      }
+
+      .computer .projetos-aPPwut {
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1144px;
+      }
+
+      .computer .frame-21 {
+        align-items: flex-end;
+        background-color: #f5f8f9;
+        background-position: 50% 50%;
+        background-size: cover;
+        border: 8px solid;
+        border-color: var(--pine-green);
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: -8px;
+        margin-top: -8px;
+        padding: 24px 36px;
+        position: relative;
+      }
+
+      .computer .frame-26085576 {
+        align-items: flex-start;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+        width: 805px;
+      }
+
+      .computer .frame-49 {
+        align-items: center;
+        background-color: transparent;
+        flex: 0 0 auto;
+        flex-direction: column;
+        position: relative;
+      }
+      /* screen - mobile */
+
+      .mobile {
+        align-items: center;
+        background-color: #f9fdff;
+        display: flex;
+        flex-direction: column;
+        gap: 78px;
+        left: 0px;
+        min-width: 351px;
+        overflow: hidden;
+        padding: 28px 0px 129px;
+        position: relative;
+        top: 0px;
+      }
+
+      .mobile .frame-37-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: -396.5px;
+        margin-right: -396.5px;
+        position: relative;
+        width: 1144px;
+      }
+
+      .mobile .group-48-WNXEpW {
+        background-color: transparent;
+        height: 42.876953125px;
+        position: relative;
+        width: 42.87690734863281px;
+      }
+
+      .mobile .frame-49-WNXEpW {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .mobile .title-ktx0qO {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-xl);
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .mobile .nit-sig-110-ktx0qO {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-jetbrains_mono);
+        font-size: var(--font-size-s);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -6px;
+        position: relative;
+        text-align: center;
+        width: 216px;
+      }
+
+      .mobile .rectangle-498-WNXEpW {
+        background-color: #b33636;
+        border-radius: 2.5px;
+        height: 5px;
+        position: relative;
+        width: 66px;
+      }
+
+      .mobile .frame-29-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        margin-left: -333px;
+        margin-right: -333px;
+        padding: 8px 1px;
+        position: relative;
+        width: 1017px;
+      }
+
+      .mobile .v-logo-o-teu-curso-atual-9EiBzQ {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 273px;
+      }
+
+      .mobile .frame-52-9EiBzQ {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 34px;
+        justify-content: center;
+        position: relative;
+        width: 557px;
+      }
+
+      .mobile .frame-62-3mbeVc {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 13px;
+        position: relative;
+      }
+
+      .mobile .image-iDdp1d {
+        height: 137px;
+        width: 272px;
+      }
+
+      .mobile .image-5-iDdp1d {
+        background-color: transparent;
+        height: 137px;
+        object-fit: cover;
+        position: relative;
+        width: 272px;
+      }
+
+      .mobile .frame-53-3mbeVc {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        gap: 34px;
+        justify-content: center;
+        margin-left: -61px;
+        margin-right: -61px;
+        position: relative;
+        width: 679px;
+      }
+
+      .mobile .na-prxima-vez-que-co-OocAJ7 {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 306px;
+      }
+
+      .mobile .frame-40-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 38px;
+        margin-left: -424.5px;
+        margin-right: -424.5px;
+        max-width: 1200px;
+        position: relative;
+        width: 1200px;
+      }
+
+      .mobile .horrio-1-click-KrJyjp {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 305px;
+      }
+
+      .mobile .group-43-KrJyjp {
+        background-color: transparent;
+        height: 81px;
+        position: relative;
+        width: 279px;
+      }
+
+      .mobile .esquece-o-labirinto-TKrgQA {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width: 277px;
+      }
+
+      .mobile .image-8-KrJyjp {
+        background-color: transparent;
+        height: 222px;
+        position: relative;
+        width: 227px;
+      }
+
+      .mobile .vecteezy_simple-hand-KrJyjp {
+        background-color: transparent;
+        height: 41px;
+        left: 680px;
+        object-fit: cover;
+        position: absolute;
+        top: 343px;
+        width: 33px;
+      }
+
+      .mobile .frame-41-LP8vkM {
+        gap: 66px;
+      }
+
+      .mobile .group-58-bSOckh {
+        background-color: transparent;
+        height: 248px;
+        position: relative;
+        width: 851px;
+      }
+
+      .mobile .group-57-zsCgE5 {
+        background-color: transparent;
+        height: 248px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 851px;
+      }
+
+      .mobile .frame-32-ZG9LZW {
+        left: 0px;
+        top: 0px;
+        width: 851px;
+      }
+
+      .mobile .flashbang-Vbx5xN {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .ficavas-todo-cego-co-Vbx5xN {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 287px;
+      }
+
+      .mobile .frame-41-c2r8eh {
+        gap: 66px;
+      }
+
+      .mobile .frame-32-VyoKEq {
+        flex: 0 0 auto;
+        width: 851px;
+      }
+
+      .mobile .dx-developer-experience-l9EZHO {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+        width: 271px;
+      }
+
+      .mobile .frame-26085576-VyoKEq {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+      }
+
+      .mobile .frame-26085577-vdDdNa {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        overflow: hidden;
+        padding: 25px 10px;
+        position: relative;
+      }
+
+      .mobile .antes-JWQvG8 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .frame-26085581-JWQvG8 {
+        align-items: flex-start;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .mobile .group-62-A7w9KE {
+        background-color: transparent;
+        height: 227.1587371826172px;
+        margin-right: -8px;
+        position: relative;
+        width: 268.5px;
+      }
+
+      .mobile .code-6TugBY {
+        background-color: transparent;
+        height: auto;
+        left: 101px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 17px;
+        width: 60px;
+      }
+
+      .mobile .load-6TugBY {
+        background-color: transparent;
+        height: auto;
+        left: 101px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 183px;
+        width: 60px;
+      }
+
+      .mobile .open-browser-6TugBY {
+        background-color: transparent;
+        height: auto;
+        left: 0px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 87px;
+        width: 98px;
+      }
+
+      .mobile .build-6TugBY {
+        background-color: transparent;
+        height: auto;
+        left: 208px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: center;
+        top: 100px;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .mobile .arrow-4-6TugBY {
+        background-color: transparent;
+        height: 58px;
+        left: 37px;
+        position: absolute;
+        top: 22px;
+        width: 54px;
+      }
+
+      .mobile .arrow-2-6TugBY {
+        background-color: transparent;
+        height: 57px;
+        left: 182px;
+        position: absolute;
+        top: 144px;
+        width: 52px;
+      }
+
+      .mobile .arrow-6-6TugBY {
+        background-color: transparent;
+        height: 61px;
+        left: 181px;
+        position: absolute;
+        top: 28px;
+        width: 59px;
+      }
+
+      .mobile .arrow-5-6TugBY {
+        background-color: transparent;
+        height: 58px;
+        left: 33px;
+        position: absolute;
+        top: 143px;
+        width: 56px;
+      }
+
+      .mobile .frame-26085578-vdDdNa {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 35px;
+        overflow: hidden;
+        padding: 29px 0px;
+        position: relative;
+      }
+
+      .mobile .depois-jV3SwN {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .code-snippet-wrapper-jV3SwN {
+        align-items: flex-start;
+        background-color: #24292e;
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 16px;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+      }
+
+      .mobile .code-snippet-8DXudT {
+        background-color: transparent;
+        color: transparent;
+        font-family: var(--font-family-azeret_mono);
+        font-size: var(--font-size-xxs);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 19.5px;
+        margin-top: -1px;
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .mobile .span0-fosiel {
+        color: #b392f0;
+        font-style: normal;
+      }
+
+      .mobile .span1-fosiel {
+        font-style: normal;
+      }
+
+      .mobile .span2-fosiel {
+        font-style: normal;
+      }
+
+      .mobile .span3-fosiel {
+        font-style: normal;
+      }
+
+      .mobile .span4-fosiel {
+        font-style: normal;
+      }
+
+      .mobile .webpack-EOCxxA {
+        background-color: transparent;
+        height: auto;
+        left: 9px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 14px;
+        width: 283px;
+      }
+
+      .mobile .static-module-bundle-EOCxxA {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-xs);
+        font-style: italic;
+        font-weight: 400;
+        height: auto;
+        left: 19px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 85px;
+        width: 264px;
+      }
+
+      .mobile .frame-41-gz9XG1 {
+        gap: 37px;
+      }
+
+      .mobile .group-54-xYk4kX {
+        background-color: transparent;
+        height: 656.56005859375px;
+        position: relative;
+        width: 321px;
+      }
+
+      .mobile .group-52-wx9Ix7 {
+        background-color: transparent;
+        height: 657px;
+        left: 0px;
+        position: relative;
+        top: 0px;
+        width: 321px;
+      }
+
+      .mobile .frame-32-b3D2sT {
+        left: 0px;
+        top: 0px;
+        width: 321px;
+      }
+
+      .mobile .uiux-melhor-Vg2svA {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .realmente-o-sigarra-Vg2svA {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .group-60-Vg2svA {
+        margin-left: -30.95px;
+        margin-right: -34.95px;
+      }
+
+      .mobile .tsx-dJUQoy {
+        background-color: transparent;
+        height: auto;
+        left: 9px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 14px;
+        width: 283px;
+      }
+
+      .mobile .type-script-meets-ht-dJUQoy {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-dai_banna_sil);
+        font-size: var(--font-size-s);
+        font-style: italic;
+        font-weight: 400;
+        height: auto;
+        left: 19px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: absolute;
+        text-align: right;
+        top: 85px;
+        width: 264px;
+      }
+
+      .mobile .j-agora-consegues-im-xYk4kX {
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 287px;
+      }
+
+      .mobile .frame-48-LP8vkM {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 37px;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .frame-33-jM7wqW {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .um-agradecimento-s-9xWGB6 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        margin-top: -1px;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .pessoas-envolvidas-9xWGB6 {
+        align-self: stretch;
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 800;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .frame-46-jM7wqW {
+        align-items: center;
+        align-self: stretch;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 0px 14px;
+        justify-content: center;
+        padding: 0px 20px;
+        position: relative;
+        width: 100%;
+      }
+
+      .mobile .image-hp1zvi {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .joo-pereira-hp1zvi {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .image-nmL4A3 {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .antnio-santos-nmL4A3 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .image-hdEBw5 {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .jaime-fonseca-hdEBw5 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-xVhsqa {
+        width: 192.5234375px;
+      }
+
+      .mobile .joo-torre-pereira-xVhsqa {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .image-SO7TBj {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .leonor-couto-SO7TBj {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-ekxlux {
+        width: 192px;
+      }
+
+      .mobile .lus-duarte-ekxlux {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .img_4713-1-MmVhXx {
+        object-fit: cover;
+        width: 192.5234375px;
+      }
+
+      .mobile .simo-nery-MmVhXx {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .image-i4cBL8 {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .sofia-merino-i4cBL8 {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .image-WxhNjt {
+        height: 192px;
+        width: 192.5234375px;
+      }
+
+      .mobile .toms-ramos-WxhNjt {
+        align-self: stretch;
+        background-color: transparent;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .tudo-por-agora-LP8vkM {
+        align-self: stretch;
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+      }
+
+      .mobile .frame-47-LP8vkM {
+        align-items: center;
+        background-color: transparent;
+        display: inline-flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 11px;
+        margin-left: -396.5px;
+        margin-right: -396.5px;
+        position: relative;
+      }
+
+      .mobile .logo_2018-1-2-WbpxgG {
+        background-color: transparent;
+        height: 121px;
+        position: relative;
+        width: 118px;
+      }
+
+      .mobile .niaefeup-WbpxgG {
+        background-color: transparent;
+        color: var(--black);
+        font-family: var(--font-family-kumbh_sans);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 700;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        width: 1144px;
+      }
+
+      .mobile .projetos-WbpxgG {
+        background-color: transparent;
+        height: 42px;
+        letter-spacing: 0px;
+        line-height: normal;
+        position: relative;
+        text-align: center;
+        width: 1144px;
+      }
+
+      .mobile .frame-41 {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -334px;
+        margin-right: -334px;
+        position: relative;
+        width: 1019px;
+      }
+
+      .mobile .group-60 {
+        background-color: transparent;
+        height: 216.56005859375px;
+        position: relative;
+        width: 312.900390625px;
+      }
+
+      .mobile .rectangle-485 {
+        background-color: transparent;
+        border: 8px solid;
+        border-color: var(--pine-green);
+        height: 217px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 309px;
+      }
+      @media screen and (max-width: 1024px) {
+        .screen.computer {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 1025px) {
+        .screen.mobile {
+          display: none;
+        }
+      }
+    </style>
+    <title>NitSig 1.1.0</title>
+  </head>
+  <body
+    style="
+      margin: 0px;
+      background: rgb(249, 253, 255);
+      overscroll-behavior-x: auto;
+    "
+  >
+    <div class="computer screen" data-id="3618:707" style="margin-top: 70px">
+      <div class="frame-37-mhNbjF" data-id="3618:708">
+        <img
+          class="group-48-EMGjjU"
+          data-id="3618:709"
+          src="./NitSig 1.1.0_files/group-48@2x.png"
+          alt="Group 48"
+        />
+        <div class="frame-49-EMGjjU frame-49" data-id="3618:713">
+          <h1 class="title-lTZs7s" data-id="3618:714">Nota de Release</h1>
+          <div class="nit-sig-110-lTZs7s" data-id="3618:715">NitSig 1.1.0</div>
+        </div>
+        <div class="rectangle-498-EMGjjU" data-id="3618:716"></div>
+      </div>
+      <div class="frame-29-mhNbjF" data-id="3618:717">
+        <p
+          class="v-logo-o-teu-curso-atual-kN5cyD jockeyone-normal-black-48px"
+          data-id="3618:718"
+        >
+          Vê logo o TEU curso atual!
+        </p>
+        <div class="frame-62-kN5cyD" data-id="3620:899">
+          <img
+            class="image-pNufxG image"
+            data-id="3620:900"
+            src="./NitSig 1.1.0_files/image@2x.png"
+            alt="image"
+          /><img
+            class="image-5-pNufxG"
+            data-id="3620:901"
+            src="./NitSig 1.1.0_files/image-5@2x.png"
+            alt="image 5"
+          />
+        </div>
+        <div class="frame-53-kN5cyD" data-id="3618:1332">
+          <p
+            class="na-prxima-vez-que-co-fILkvZ fenix-normal-black-32px"
+            data-id="3618:1333"
+          >
+            Na próxima vez que consultares o perfil, vais direto para o percurso
+            académico do curso.<br /><br />Sejamos sinceros, a tua licenciatura
+            já está no passado!
+          </p>
+        </div>
+      </div>
+      <div class="frame-40-mhNbjF" data-id="3618:724">
+        <div
+          class="horrio-1-click-R3fx37 jockeyone-normal-black-48px"
+          data-id="3618:725"
+        >
+          Horário? 1 click
+        </div>
+        <div class="group-43-R3fx37" data-id="3618:726">
+          <p
+            class="esquece-o-labirinto-Apyr0D fenix-normal-black-32px"
+            data-id="3618:727"
+          >
+            Esquece o labirinto para veres as tuas aulas. Agora está mesmo perto
+            de ti!
+          </p>
+        </div>
+        <img
+          class="image-8-R3fx37"
+          data-id="3620:962"
+          src="./NitSig 1.1.0_files/image-8@2x.png"
+          alt="image 8"
+        /><img
+          class="vecteezy_simple-hand-R3fx37"
+          data-id="3629:1137"
+          src="./NitSig 1.1.0_files/vecteezy-simple-hand-cursor-11720952-226-1.png"
+          alt="vecteezy_simple-hand-cursor_11720952_226 1"
+        />
+      </div>
+      <div class="frame-41-mhNbjF" data-id="3618:740">
+        <div class="group-58-fSIVLn" data-id="3618:741">
+          <div class="group-57-RrMM6v" data-id="3618:742">
+            <div class="frame-32-MXAj6Y frame-32" data-id="3618:743">
+              <div
+                class="flashbang-Mki01o jockeyone-normal-black-48px"
+                data-id="3618:744"
+              >
+                Flashbang!! 💥
+              </div>
+              <p
+                class="ficavas-todo-cego-co-Mki01o fenix-normal-black-32px"
+                data-id="3618:745"
+              >
+                Ficavas todo cego com o NitSig sempre que abrias uma nova
+                página?<br /><br />Ora, boas notícias para ti. Problema
+                mitigado!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-32-mhNbjF frame-32" data-id="3618:773">
+        <p
+          class="dx-developer-experience-LYG3IX jockeyone-normal-black-48px"
+          data-id="3618:1335"
+        >
+          DX - Developer Experience 😎
+        </p>
+        <div class="frame-26085576" data-id="3620:943">
+          <div class="frame-26085577-MF1JQ5" data-id="3620:944">
+            <div
+              class="antes-36eTlx fenix-normal-black-32px"
+              data-id="3620:948"
+            >
+              Antes 🤕
+            </div>
+            <div class="frame-26085581-36eTlx" data-id="3620:1037">
+              <div class="group-62-7nYC37" data-id="3620:1013">
+                <div class="frame-26085580-DvDOYA" data-id="3620:1014">
+                  <div
+                    class="code-AMPsGG fenix-normal-black-32px"
+                    data-id="3620:1015"
+                  >
+                    Code
+                  </div>
+                  <div
+                    class="load-AMPsGG fenix-normal-black-32px"
+                    data-id="3620:1016"
+                  >
+                    Load
+                  </div>
+                </div>
+                <div class="frame-26085579-DvDOYA" data-id="3620:1017">
+                  <div
+                    class="open-browser-KsrN0v fenix-normal-black-32px"
+                    data-id="3620:1018"
+                  >
+                    Open Browser
+                  </div>
+                  <div
+                    class="build-KsrN0v fenix-normal-black-32px"
+                    data-id="3620:1019"
+                  >
+                    Build
+                  </div>
+                </div>
+                <img
+                  class="arrow-4-DvDOYA"
+                  data-id="3620:1020"
+                  src="./NitSig 1.1.0_files/arrow-4.svg"
+                  alt="Arrow 4"
+                /><img
+                  class="arrow-2-DvDOYA"
+                  data-id="3620:1021"
+                  src="./NitSig 1.1.0_files/arrow-2.svg"
+                  alt="Arrow 2"
+                /><img
+                  class="arrow-6-DvDOYA"
+                  data-id="3620:1022"
+                  src="./NitSig 1.1.0_files/arrow-6.svg"
+                  alt="Arrow 6"
+                /><img
+                  class="arrow-5-DvDOYA"
+                  data-id="3620:1023"
+                  src="./NitSig 1.1.0_files/arrow-5.svg"
+                  alt="Arrow 5"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="frame-26085578-MF1JQ5" data-id="3620:945">
+            <div
+              class="depois-Y9eHG3 fenix-normal-black-32px"
+              data-id="3620:949"
+            >
+              Depois 🍹
+            </div>
+            <div class="code-snippet-wrapper-Y9eHG3" data-id="3620:1034">
+              <div class="code-snippet-tntxTs" data-id="3620:1035">
+                <span class="span0-Tfv5hn">yarn</span
+                ><span class="span1-Tfv5hn azeretmono-normal-mercury-13px"
+                  >&nbsp;</span
+                ><span class="span2-Tfv5hn azeretmono-normal-cornflower-13px"
+                  >run</span
+                ><span class="span3-Tfv5hn azeretmono-normal-mercury-13px"
+                  >&nbsp;</span
+                ><span class="span4-Tfv5hn azeretmono-normal-cornflower-13px"
+                  >dev:firefox</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-26085576-9bTFfx frame-26085576" data-id="3621:1435">
+          <div
+            class="frame-21-edFOxh frame-21"
+            data-id="3621:1436-4b93ace4-35fd-47a9-a7eb-9acb35dfcbba"
+          >
+            <div
+              class="webpack-Pd6YYM jockeyone-normal-black-32px"
+              data-id="3621:1437"
+            >
+              Webpack
+            </div>
+            <p class="static-module-bundle-Pd6YYM" data-id="3621:1438">
+              Static module bundler for modern JavaScript applications.<br />Webpack
+              can watch files and recompile whenever they change.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="frame-49-mhNbjF frame-49" data-id="3618:1337">
+        <div class="group-54-84x0oJ" data-id="3618:1338">
+          <div class="group-52-cJvLDV" data-id="3618:1339">
+            <div class="frame-32-rkipxQ frame-32" data-id="3618:1340">
+              <div
+                class="uiux-melhor-FJvxzc jockeyone-normal-black-48px"
+                data-id="3618:1341"
+              >
+                UI!UX melhor?!
+              </div>
+              <p
+                class="realmente-o-sigarra-FJvxzc fenix-normal-black-32px"
+                data-id="3618:1378"
+              >
+                Realmente o Sigarra não é lá muito consistente, mas com um
+                jeitinho de TSX isto vai ao sítio!<br /><br />O Sigarra tem uma
+                cirurgia plástica marcada e nós somos os cirurgiões!<br /><br />Aproveita
+                e vê o que já
+                <a href="https://sigarra.up.pt/feup/pt/components"
+                  >construímos 👀</a
+                >
+              </p>
+              <div
+                class="frame-26085576-FJvxzc frame-26085576"
+                data-id="3618:1342"
+              >
+                <div
+                  class="frame-21-CCqYjx frame-21"
+                  data-id="3618:1384-7159b036-2239-4306-845d-7d37cd836fa6"
+                >
+                  <div
+                    class="tsx-vtwWpQ jockeyone-normal-black-32px"
+                    data-id="3618:1385"
+                  >
+                    .tsx
+                  </div>
+                  <p class="type-script-meets-ht-vtwWpQ" data-id="3618:1386">
+                    TypeScript meets HTML in JavaScript for seamless, typed
+                    development.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="j-agora-consegues-im-84x0oJ fenix-normal-black-32px"
+          data-id="3618:1355"
+        >
+          Já agora, consegues imaginar um Sigarra clicks neutral?<br />Nós já
+          começamos a adotar as novas normas... 😶
+        </p>
+      </div>
+      <div class="frame-42-mhNbjF" data-id="3618:802">
+        <div class="frame-33-2dmD1y" data-id="3618:803">
+          <div
+            class="um-agradecimento-s-TgOVn4 fenix-normal-black-32px"
+            data-id="3618:804"
+          >
+            Um agradecimento às
+          </div>
+          <div class="pessoas-envolvidas-TgOVn4" data-id="3618:805">
+            Pessoas envolvidas
+          </div>
+        </div>
+        <div class="frame-46-2dmD1y" data-id="3618:806">
+          <article class="person" data-id="3618:807">
+            <div class="frame-26085575" data-id="I3618:807;3618:1269">
+              <img
+                class="image-F5cBVi image"
+                data-id="I3618:807;3618:1270"
+                src="./NitSig 1.1.0_files/image-1@2x.png"
+                alt="image"
+              />
+              <div
+                class="joo-pereira-F5cBVi fenix-normal-black-32px"
+                data-id="I3618:807;3618:1271"
+              >
+                João Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3618:808">
+            <div class="frame-26085575" data-id="I3618:808;3621:1392">
+              <img
+                class="image-tf37nE image"
+                data-id="I3618:808;3621:1393"
+                src="./NitSig 1.1.0_files/image-2@2x.png"
+                alt="image"
+              />
+              <div
+                class="antnio-santos-tf37nE fenix-normal-black-32px"
+                data-id="I3618:808;3621:1394"
+              >
+                António Santos
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:879">
+            <div class="frame-26085575" data-id="I3637:879;3618:1259">
+              <img
+                class="image-xaZopT image"
+                data-id="I3637:879;3618:1260"
+                src="./NitSig 1.1.0_files/image-3@2x.png"
+                alt="image"
+              />
+              <div
+                class="jaime-fonseca-xaZopT fenix-normal-black-32px"
+                data-id="I3637:879;3618:1261"
+              >
+                Jaime Fonseca
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3618:814">
+            <div class="frame-26085575" data-id="I3618:814;3052:369">
+              <img
+                class="img_4713-1-GUj4Ov img_4713-1"
+                data-id="I3618:814;3052:366"
+                src="./NitSig 1.1.0_files/img-4713-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="joo-torre-pereira-GUj4Ov fenix-normal-black-32px"
+                data-id="I3618:814;3052:365"
+              >
+                João Torre Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:852">
+            <div class="frame-26085575" data-id="I3637:852;3637:849">
+              <img
+                class="image-BXFEQ8 image"
+                data-id="I3637:852;3637:850"
+                src="./NitSig 1.1.0_files/image-4@2x.png"
+                alt="image"
+              />
+              <div
+                class="leonor-couto-BXFEQ8 fenix-normal-black-32px"
+                data-id="I3637:852;3637:851"
+              >
+                Leonor Couto
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3618:813">
+            <div class="frame-26085575" data-id="I3618:813;3053:459">
+              <img
+                class="img_4713-1-kUaI2U img_4713-1"
+                data-id="I3618:813;3053:460"
+                src="./NitSig 1.1.0_files/img-4713-1-1@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="lus-duarte-kUaI2U fenix-normal-black-32px"
+                data-id="I3618:813;3053:461"
+              >
+                Luís Duarte
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:868">
+            <div class="frame-26085575" data-id="I3637:868;3180:375">
+              <img
+                class="img_4713-1-6VHwmt img_4713-1"
+                data-id="I3637:868;3180:376"
+                src="./NitSig 1.1.0_files/img-4713-1-2@2x.png"
+                alt="IMG_4713 1"
+              />
+              <div
+                class="simo-nery-6VHwmt fenix-normal-black-32px"
+                data-id="I3637:868;3180:377"
+              >
+                Simão Nery
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:860">
+            <div class="frame-26085575" data-id="I3637:860;3618:1277">
+              <img
+                class="image-cohfxk image"
+                data-id="I3637:860;3618:1278"
+                src="./NitSig 1.1.0_files/image-6@2x.png"
+                alt="image"
+              />
+              <div
+                class="sofia-merino-cohfxk fenix-normal-black-32px"
+                data-id="I3637:860;3618:1279"
+              >
+                Sofia Merino
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3621:1412">
+            <div class="frame-26085575" data-id="I3621:1412;3618:1273">
+              <img
+                class="image-FS6dIw image"
+                data-id="I3621:1412;3618:1274"
+                src="./NitSig 1.1.0_files/image-7@2x.png"
+                alt="image"
+              />
+              <div
+                class="toms-ramos-FS6dIw fenix-normal-black-32px"
+                data-id="I3621:1412;3618:1275"
+              >
+                Tomás Ramos
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div
+        class="tudo-por-agora-mhNbjF fenix-normal-black-32px"
+        data-id="3618:817"
+      >
+        É tudo por agora!
+      </div>
+      <div class="frame-47-mhNbjF" data-id="3618:818">
+        <img
+          class="logo_2018-1-2-aPPwut"
+          data-id="3618:819"
+          src="./NitSig 1.1.0_files/logo-2018--1--2.svg"
+          alt="logo_2018 (1) 2"
+        />
+        <div class="niaefeup-aPPwut" data-id="3618:841">NIAEFEUP</div>
+        <div class="projetos-aPPwut fenix-normal-black-32px" data-id="3618:842">
+          Projetos
+        </div>
+      </div>
+    </div>
+    <div class="mobile screen" data-id="3618:843" style="margin-top: 70px">
+      <div class="frame-37-LP8vkM" data-id="3618:844">
+        <img
+          class="group-48-WNXEpW"
+          data-id="3618:845"
+          src="./NitSig 1.1.0_files/group-48@2x.png"
+          alt="Group 48"
+        />
+        <div class="frame-49-WNXEpW" data-id="3618:849">
+          <h1 class="title-ktx0qO" data-id="3618:850">Nota de Release</h1>
+          <div class="nit-sig-110-ktx0qO" data-id="3618:851">NitSig 1.1.0</div>
+        </div>
+        <div class="rectangle-498-WNXEpW" data-id="3618:852"></div>
+      </div>
+      <div class="frame-29-LP8vkM" data-id="3618:853">
+        <p
+          class="v-logo-o-teu-curso-atual-9EiBzQ jockeyone-normal-black-40px"
+          data-id="3618:854"
+        >
+          Vê logo o TEU curso atual!
+        </p>
+        <div class="frame-52-9EiBzQ" data-id="3618:855">
+          <div class="frame-62-3mbeVc" data-id="3620:1067">
+            <img
+              class="image-iDdp1d image"
+              data-id="3620:1068"
+              src="./NitSig 1.1.0_files/image-9@2x.png"
+              alt="image"
+            /><img
+              class="image-5-iDdp1d"
+              data-id="3620:1069"
+              src="./NitSig 1.1.0_files/image-5-1@2x.png"
+              alt="image 5"
+            />
+          </div>
+          <div class="frame-53-3mbeVc" data-id="3620:1070">
+            <p
+              class="na-prxima-vez-que-co-OocAJ7 fenix-normal-black-24px"
+              data-id="3620:1071"
+            >
+              Na próxima vez que consultares o perfil, vais direto para o
+              percurso académico do curso.<br /><br />Sejamos sinceros, a tua
+              licenciatura já está no passado!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="frame-40-LP8vkM" data-id="3618:860">
+        <div
+          class="horrio-1-click-KrJyjp jockeyone-normal-black-40px"
+          data-id="3618:861"
+        >
+          Horário? 1 click
+        </div>
+        <div class="group-43-KrJyjp" data-id="3618:862">
+          <p
+            class="esquece-o-labirinto-TKrgQA fenix-normal-black-24px"
+            data-id="3618:863"
+          >
+            Esquece o labirinto para veres as tuas aulas. Agora está mesmo perto
+            de ti!
+          </p>
+        </div>
+        <img
+          class="image-8-KrJyjp"
+          data-id="3620:1073"
+          src="./NitSig 1.1.0_files/image-8-1@2x.png"
+          alt="image 8"
+        /><img
+          class="vecteezy_simple-hand-KrJyjp"
+          data-id="3629:1139"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="vecteezy_simple-hand-cursor_11720952_226 1"
+        />
+      </div>
+      <div class="frame-41-LP8vkM frame-41" data-id="3618:870">
+        <div class="group-58-bSOckh" data-id="3618:871">
+          <div class="group-57-zsCgE5" data-id="3618:872">
+            <div class="frame-32-ZG9LZW frame-32" data-id="3618:873">
+              <div
+                class="flashbang-Vbx5xN jockeyone-normal-black-40px"
+                data-id="3618:874"
+              >
+                Flashbang!! 💥
+              </div>
+              <p
+                class="ficavas-todo-cego-co-Vbx5xN fenix-normal-black-24px"
+                data-id="3618:875"
+              >
+                Ficavas todo cego com o NitSig sempre que abrias uma nova
+                página?<br /><br />Ora, boas notícias para ti. Problema
+                mitigado!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-41-c2r8eh frame-41" data-id="3618:878">
+        <div class="frame-32-VyoKEq frame-32" data-id="3618:879">
+          <p
+            class="dx-developer-experience-l9EZHO jockeyone-normal-black-40px"
+            data-id="3618:880"
+          >
+            DX - Developer Experience 😎
+          </p>
+        </div>
+        <div class="frame-26085576-VyoKEq" data-id="3620:1075">
+          <div class="frame-26085577-vdDdNa" data-id="3620:1076">
+            <div
+              class="antes-JWQvG8 fenix-normal-black-32px"
+              data-id="3620:1077"
+            >
+              Antes 🤕
+            </div>
+            <div class="frame-26085581-JWQvG8" data-id="3620:1078">
+              <div class="group-62-A7w9KE" data-id="3620:1079">
+                <div
+                  class="code-6TugBY fenix-normal-black-24px"
+                  data-id="3620:1081"
+                >
+                  Code
+                </div>
+                <div
+                  class="load-6TugBY fenix-normal-black-24px"
+                  data-id="3620:1082"
+                >
+                  Load
+                </div>
+                <div
+                  class="open-browser-6TugBY fenix-normal-black-24px"
+                  data-id="3620:1084"
+                >
+                  Open Browser
+                </div>
+                <div
+                  class="build-6TugBY fenix-normal-black-24px"
+                  data-id="3620:1085"
+                >
+                  Build
+                </div>
+                <img
+                  class="arrow-4-6TugBY"
+                  data-id="3620:1086"
+                  src="./NitSig 1.1.0_files/arrow-4-1.svg"
+                  alt="Arrow 4"
+                /><img
+                  class="arrow-2-6TugBY"
+                  data-id="3620:1087"
+                  src="./NitSig 1.1.0_files/arrow-2-1.svg"
+                  alt="Arrow 2"
+                /><img
+                  class="arrow-6-6TugBY"
+                  data-id="3620:1088"
+                  src="./NitSig 1.1.0_files/arrow-6-1.svg"
+                  alt="Arrow 6"
+                /><img
+                  class="arrow-5-6TugBY"
+                  data-id="3620:1089"
+                  src="./NitSig 1.1.0_files/arrow-5-1.svg"
+                  alt="Arrow 5"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="frame-26085578-vdDdNa" data-id="3620:1090">
+            <div
+              class="depois-jV3SwN fenix-normal-black-32px"
+              data-id="3620:1091"
+            >
+              Depois 🍹
+            </div>
+            <div class="code-snippet-wrapper-jV3SwN" data-id="3620:1092">
+              <div class="code-snippet-8DXudT" data-id="3620:1093">
+                <span class="span0-fosiel">yarn</span
+                ><span class="span1-fosiel azeretmono-normal-mercury-13px"
+                  >&nbsp;</span
+                ><span class="span2-fosiel azeretmono-normal-cornflower-13px"
+                  >run</span
+                ><span class="span3-fosiel azeretmono-normal-mercury-13px"
+                  >&nbsp;</span
+                ><span class="span4-fosiel azeretmono-normal-cornflower-13px"
+                  >dev:firefox</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-60" data-id="3620:1110">
+          <div class="rectangle-485" data-id="3620:1111"></div>
+          <div
+            class="webpack-EOCxxA jockeyone-normal-black-32px"
+            data-id="3620:1112"
+          >
+            Webpack
+          </div>
+          <p class="static-module-bundle-EOCxxA" data-id="3620:1113">
+            Static module bundler for modern JavaScript applications.<br />Webpack
+            can watch files and recompile whenever they change.
+          </p>
+        </div>
+      </div>
+      <div class="frame-41-gz9XG1 frame-41" data-id="3618:896">
+        <div class="group-54-xYk4kX" data-id="3618:897">
+          <div class="group-52-wx9Ix7" data-id="3618:898">
+            <div class="frame-32-b3D2sT frame-32" data-id="3618:899">
+              <div
+                class="uiux-melhor-Vg2svA jockeyone-normal-black-40px"
+                data-id="3618:900"
+              >
+                UI!UX melhor?!
+              </div>
+              <p
+                class="realmente-o-sigarra-Vg2svA fenix-normal-black-24px"
+                data-id="3618:901"
+              >
+                Realmente o Sigarra não é lá muito consistente, mas com um
+                jeitinho de TSX isto vai ao sítio!<br /><br />O Sigarra tem uma
+                cirurgia plástica marcada e nós somos os cirurgiões!<br /><br />Aproveita
+                e vê o que já construímos 👀
+              </p>
+              <div class="group-60-Vg2svA group-60" data-id="3620:1105">
+                <div class="rectangle-485" data-id="3620:1106"></div>
+                <div
+                  class="tsx-dJUQoy jockeyone-normal-black-32px"
+                  data-id="3620:1107"
+                >
+                  .tsx
+                </div>
+                <p class="type-script-meets-ht-dJUQoy" data-id="3620:1108">
+                  TypeScript meets HTML in JavaScript for seamless, typed
+                  development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="j-agora-consegues-im-xYk4kX fenix-normal-black-24px"
+          data-id="3618:908"
+        >
+          Já agora, consegues imaginar um Sigarra clicks neutral?<br />Nós já
+          começamos a adotar as novas normas... 😶
+        </p>
+      </div>
+      <div class="frame-48-LP8vkM" data-id="3620:1115">
+        <div class="frame-33-jM7wqW" data-id="3620:1116">
+          <div
+            class="um-agradecimento-s-9xWGB6 fenix-normal-black-24px"
+            data-id="3620:1117"
+          >
+            Um agradecimento às
+          </div>
+          <div class="pessoas-envolvidas-9xWGB6" data-id="3620:1118">
+            Pessoas envolvidas
+          </div>
+        </div>
+        <div class="frame-46-jM7wqW" data-id="3637:887">
+          <article class="person" data-id="3637:888">
+            <div class="frame-26085575" data-id="I3637:888;3618:1269">
+              <img
+                class="image-hp1zvi image"
+                data-id="I3637:888;3618:1270"
+                src="./NitSig 1.1.0_files/image-1@2x.png"
+                alt="image"
+              />
+              <div
+                class="joo-pereira-hp1zvi fenix-normal-black-32px"
+                data-id="I3637:888;3618:1271"
+              >
+                João Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:889">
+            <div class="frame-26085575" data-id="I3637:889;3621:1392">
+              <img
+                class="image-nmL4A3 image"
+                data-id="I3637:889;3621:1393"
+                src="./NitSig 1.1.0_files/image-2@2x.png"
+                alt="image"
+              />
+              <div
+                class="antnio-santos-nmL4A3 fenix-normal-black-32px"
+                data-id="I3637:889;3621:1394"
+              >
+                António Santos
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:890">
+            <div class="frame-26085575" data-id="I3637:890;3618:1259">
+              <img
+                class="image-hdEBw5 image"
+                data-id="I3637:890;3618:1260"
+                src="./NitSig 1.1.0_files/image-3@2x.png"
+                alt="image"
+              />
+              <div
+                class="jaime-fonseca-hdEBw5 fenix-normal-black-32px"
+                data-id="I3637:890;3618:1261"
+              >
+                Jaime Fonseca
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:891">
+            <div class="frame-26085575" data-id="I3637:891;3052:369">
+              <img
+                class="img_4713-1-xVhsqa img_4713-1"
+                data-id="I3637:891;3052:366"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                alt="IMG_4713 1"
+              />
+              <div
+                class="joo-torre-pereira-xVhsqa fenix-normal-black-32px"
+                data-id="I3637:891;3052:365"
+              >
+                João Torre Pereira
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:892">
+            <div class="frame-26085575" data-id="I3637:892;3637:849">
+              <img
+                class="image-SO7TBj image"
+                data-id="I3637:892;3637:850"
+                src="./NitSig 1.1.0_files/image-4@2x.png"
+                alt="image"
+              />
+              <div
+                class="leonor-couto-SO7TBj fenix-normal-black-32px"
+                data-id="I3637:892;3637:851"
+              >
+                Leonor Couto
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:893">
+            <div class="frame-26085575" data-id="I3637:893;3053:459">
+              <img
+                class="img_4713-1-ekxlux img_4713-1"
+                data-id="I3637:893;3053:460"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                alt="IMG_4713 1"
+              />
+              <div
+                class="lus-duarte-ekxlux fenix-normal-black-32px"
+                data-id="I3637:893;3053:461"
+              >
+                Luís Duarte
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:894">
+            <div class="frame-26085575" data-id="I3637:894;3180:375">
+              <img
+                class="img_4713-1-MmVhXx img_4713-1"
+                data-id="I3637:894;3180:376"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                alt="IMG_4713 1"
+              />
+              <div
+                class="simo-nery-MmVhXx fenix-normal-black-32px"
+                data-id="I3637:894;3180:377"
+              >
+                Simão Nery
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:895">
+            <div class="frame-26085575" data-id="I3637:895;3618:1277">
+              <img
+                class="image-i4cBL8 image"
+                data-id="I3637:895;3618:1278"
+                src="./NitSig 1.1.0_files/image-6@2x.png"
+                alt="image"
+              />
+              <div
+                class="sofia-merino-i4cBL8 fenix-normal-black-32px"
+                data-id="I3637:895;3618:1279"
+              >
+                Sofia Merino
+              </div>
+            </div>
+          </article>
+          <article class="person" data-id="3637:896">
+            <div class="frame-26085575" data-id="I3637:896;3618:1273">
+              <img
+                class="image-WxhNjt image"
+                data-id="I3637:896;3618:1274"
+                src="./NitSig 1.1.0_files/image-7@2x.png"
+                alt="image"
+              />
+              <div
+                class="toms-ramos-WxhNjt fenix-normal-black-32px"
+                data-id="I3637:896;3618:1275"
+              >
+                Tomás Ramos
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div
+        class="tudo-por-agora-LP8vkM fenix-normal-black-24px"
+        data-id="3618:943"
+      >
+        É tudo por agora!
+      </div>
+      <div class="frame-47-LP8vkM" data-id="3618:944">
+        <img
+          class="logo_2018-1-2-WbpxgG"
+          data-id="3618:945"
+          src="./NitSig 1.1.0_files/logo-2018--1--2-1.svg"
+          alt="logo_2018 (1) 2"
+        />
+        <div class="niaefeup-WbpxgG" data-id="3618:967">NIAEFEUP</div>
+        <div class="projetos-WbpxgG fenix-normal-black-32px" data-id="3618:968">
+          Projetos
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
